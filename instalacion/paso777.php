@@ -1,8 +1,9 @@
 Creacion de la todo los datos 
 <?php
+require("../coneccion.php"); 
 include("../funciones.php");
 /*Ejecutando el escrip Base.sql*/
-ejecutarSQL('./Base.sql','viva');
+ejecutarSQL('./Base.sql',$conexion);
 ?>
 
 <form method="post" action="?Paso=777">

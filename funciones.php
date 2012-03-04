@@ -19,9 +19,11 @@ function ejecutarSQL($_ArchivoSQL, $_conexionDB)
 		if($Pedasos[$i] == $Separador || substr(trim($Pedasos[$i]), -1*(strlen($Separador))) == $Separador) { 
 			// Si terminamos el parseo ejecuto la consulta
 			$ConsultaSQL .= str_replace($Separador, '', $Pedasos[$i]); // Elimino el delimitador
-			//$_conexionDB->query($ConsultaSQL);// la consulta 
+			//mysql_query($ConsultaSQL) or die("Problema con:".mysql_error());// la consulta 
+			echo "<br>";
 			echo "Consulta es: $ConsultaSQL";
 			echo "<br>";
+			$registros=mysql_query($ConsultaSQL,conexion) or die("Problemas en el select:".mysql_error());
 			$ConsultaSQL = ""; // Preparo la consulta para continuar con la siguiente sentencia
 			$Pedasos[$i] = '';
 			$HacerSQL = false;
