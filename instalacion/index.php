@@ -11,22 +11,15 @@ Proyecto ADSII
 <body> 
 <div>
 <?php	
-if( $_REQUEST['Paso'] == 1){
-	echo "enviado";
-	}
+    if( $_REQUEST['Paso'] == 1){
+	    require("paso1.php");
+	    }
+	else if( $_REQUEST['Paso'] == 2){
+		echo "paso 2";
+		}
 	else{
-?>	
-<form method="post" action="">
-Titulo de la pagina: 
-<input type="text" name="Titulo">
-<br>
-<?php 
-$_REQUEST['Paso'] = 1;
-?>
-<input type="submit" value="confirmar">
-</form>
-<?php
-}
+		require("paso0.php");
+		}
 ?>
 </div>
 </body> 
