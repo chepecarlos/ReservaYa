@@ -11,15 +11,18 @@ Proyecto ADSII
 <body> 
 <div>
 <?php	
-if( $_REQUEST != null){
+if( $_REQUEST['Paso'] == 1){
 	echo "enviado";
 	}
 	else{
 ?>	
-<form method="post" action="index.php">
+<form method="post" action="">
 Titulo de la pagina: 
 <input type="text" name="Titulo">
 <br>
+<?php 
+$_REQUEST['Paso'] = 1;
+?>
 <input type="submit" value="confirmar">
 </form>
 <?php
