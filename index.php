@@ -14,7 +14,14 @@ Proyecto ADSII
 require("cabecera.php");
 ?>
 <div>
-Hola mundo
+<?php
+if(isset( $_REQUEST)){
+	echo "Con datos";
+	}
+else{
+	require("reserva.php");
+	}
+?>
 </div>
 <?php
 require("pie.php");
