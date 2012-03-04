@@ -7,14 +7,14 @@
 
 <body>
 <form id="form1" name="form1" method="post" action="">
-  <table width="80%" border="0" cellspacing="0" cellpadding="0">
+  <table width="24%" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td>Login</td>
-      <td><input type="text" name="login" id="login" /></td>
+      <td width="33%">Login</td>
+      <td width="67%"><input type="text" name="login" id="login" /></td>
     </tr>
     <tr>
       <td>Password</td>
-      <td><input type="text" name="password" id="password" /></td>
+      <td><input type="password" name="password" id="password" /></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
