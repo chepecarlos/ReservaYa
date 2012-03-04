@@ -12,16 +12,22 @@ Proyecto ADSII
 <div>
 <?php	
 if(isset ($_REQUEST['Paso'])){
-
-    if( $_REQUEST['Paso'] == 1){
-	    require("paso1.php");
-	    }
-	else if( $_REQUEST['Paso'] == 2){
-		echo "paso 2";
-		}}
-	else{
-		require("paso0.php");
+	switch ($_REQUEST['Paso'])
+    {
+	case 1:
+		require("paso1.php");
+    break;
+	case 2:
+		require("paso2.php");
+	break;
+	case 777:
+		require("paso777.php");
+	break;
 		}
+	}
+else{
+	require("paso0.php");
+	}
 ?>
 </div>
 </body> 
