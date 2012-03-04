@@ -1,8 +1,3 @@
-<style type="text/css">
-.left {
-	text-align: right;
-}
-</style>
 <p>Bienvenidos!</p>
 <p>Este es un instalador, para un sistema de mesas, </p>
 <p>sigue paso a paso las instrucciones que encontraras, </p>
