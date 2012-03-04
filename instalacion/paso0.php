@@ -1,6 +1,9 @@
+<p>Bienvenidos!</p>
+<p>Este es un instalador, para un sistema de mesas, </p>
+<p>sigue paso a paso las instrucciones que encontraras, </p>
+<p>mas adelante.</p>
+<left>
 <form method="post" action="?Paso=1">
-Titulo de la pagina: 
-<input type="text" name="Titulo">
-<br>
-<input type="submit" value="Siquiente">
+  <input type="submit" value="Iniciar">
 </form>
+</left>
