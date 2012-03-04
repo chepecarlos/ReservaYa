@@ -15,7 +15,7 @@ require("cabecera.php");
 ?>
 <div>
 <?php
-if(isset( $_REQUEST)){
+if(isset( $_REQUEST['id'])){
 	echo "Con datos";
 	}
 else{
