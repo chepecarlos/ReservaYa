@@ -11,11 +11,7 @@ function ejecutarSQL($_ArchivoSQL, $_conexionDB)
   $Separador = ";";
   
   for($i = 0; $i < $CantidadPedasos; $i++){
-	echo '<br>';
-	echo $Pedasos[$i];
-	echo ' ';  
-	echo $ConsultaSQL;
-      $MiniSQL = strtolower($Pedasos[$i]);
+	  $MiniSQL = strtolower($Pedasos[$i]);
 	  $TipoSentencia = in_array($MiniSQL, array( 
 	 'select', 'update', 'delete', 'insert',
      'create', 'alter', 'drop', 'call', 'set', 'use' ));
@@ -24,7 +20,8 @@ function ejecutarSQL($_ArchivoSQL, $_conexionDB)
 			// Si terminamos el parseo ejecuto la consulta
 			$ConsultaSQL .= str_replace($Separador, '', $Pedasos[$i]); // Elimino el delimitador
 			//$_conexionDB->query($ConsultaSQL);// la consulta 
-			echo $ConsultaSQL;
+			echo "Consulta es: $ConsultaSQL";
+			echo "<br>";
 			$ConsultaSQL = ""; // Preparo la consulta para continuar con la siguiente sentencia
 			$Pedasos[$i] = '';
 			$HacerSQL = false;
@@ -34,7 +31,7 @@ function ejecutarSQL($_ArchivoSQL, $_conexionDB)
 			$HacerSQL = true;
 			$ConsultaSQL = "";
 		}
-	$ConsultaSQL = 	"{$Pedasos[$i]} ";
+	$ConsultaSQL = "$ConsultaSQL $Pedasos[$i] ";
 	}//fin del for	
 }/* Resive un archivo SQL, una conexion y ejecuta la sentencia */
 ?>
