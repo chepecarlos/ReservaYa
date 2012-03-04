@@ -1,5 +1,5 @@
 <p>Registro de Datos de la Empresa</p>
-<form method="post" action="?Paso=777">
+<form method="post" action="?Paso=2">
   <p>Nombre:
     <input type="text" name="Nombre" id="Nombre">
   </p>

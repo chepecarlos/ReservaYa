@@ -1,5 +1,5 @@
 <p>Registro de Datos del Administrador</p>
-<form method="post" action="?Paso=777">
+<form method="post" action="?Paso=3">
   <p>Nombre:
     <input type="text" name="Nombre" id="Nombre">
   </p>

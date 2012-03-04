@@ -20,6 +20,9 @@ if(isset ($_REQUEST['Paso'])){
 	case 2:
 		require("paso2.php");
 	break;
+	case 3:
+		require("paso3.php");
+	break;
 	case 777:
 		require("paso777.php");
 	break;
