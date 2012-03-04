@@ -24,7 +24,7 @@ function ejecutarSQL($_ArchivoSQL, $_conexionDB)
 			// Si terminamos el parseo ejecuto la consulta
 			$ConsultaSQL .= str_replace($Separador, '', $Pedasos[$i]); // Elimino el delimitador
 			//$_conexionDB->query($ConsultaSQL);// la consulta 
-			echo $ConsultaSQL
+			echo $ConsultaSQL;
 			$ConsultaSQL = ""; // Preparo la consulta para continuar con la siguiente sentencia
 			$Pedasos[$i] = '';
 			$HacerSQL = false;
