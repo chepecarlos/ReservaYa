@@ -11,7 +11,7 @@ Proyecto ADSII
 <body> 
 <div>
 <?php 
-require('../becera.php');
+require('../cabecera.php');
 ?>
 <div>
 Hola mundo
