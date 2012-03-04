@@ -22,7 +22,7 @@
     <input type="text" name="F_Nacimiento" id="F_Nacimiento" />
 </p>
   <p>Dui :
-    <input type="text" name="Titulo8" />
+    <input type="text" name="Dui" id="Dui" />
   </p>
   <p>    <br>
   	<input type="reset" name="button" id="button" value="Limpiar" />

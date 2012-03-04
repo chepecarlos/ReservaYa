@@ -12,7 +12,7 @@
       <td><p>
         <input type="text" name="Cantidad" id="Cantidad" />
       </p></td>
-      <td><input type="text" name="Titulo2" /></td>
+      <td><input type="text" name="PersonasxMesa" id="PersonasxMesa" /></td>
       <td><input type="submit" name="button2" id="button2" value="Agregar" />
       <input type="button" name="button3" id="button3" value="Eliminar" /></td>
     </tr>
