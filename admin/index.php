@@ -1,6 +1,6 @@
 <?php  
 /* pagina de inicio del sistema */
-require("../coneccion.php"); 
+require('../coneccion.php'); 
 ?>
 <html>
 <head>
@@ -11,13 +11,13 @@ Proyecto ADSII
 <body> 
 <div>
 <?php 
-require("../becera.php");
+require('../cabecera.php');
 ?>
 <div>
 Hola mundo
 </div>
 <?php
-require("../pie.php");
+require('../pie.php');
 ?>
 </div>
 </body> 
