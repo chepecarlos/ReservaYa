@@ -9,12 +9,16 @@ Proyecto ADSII
 </title>
 </head>
 <body> 
+<div>
 <?php 
 require("cabecera.php");
 ?>
-Hola mundo 
+<div>
+Hola mundo
+</div>
 <?php
 require("pie.php");
 ?>
+</div>
 </body> 
 </html>
