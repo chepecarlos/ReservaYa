@@ -19,4 +19,3 @@
     <input type="submit" name="button" id="button" value="Enviar">
   </p>
 </form>
-<p>&nbsp;</p>
