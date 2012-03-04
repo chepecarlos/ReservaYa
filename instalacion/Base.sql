@@ -15,9 +15,7 @@ create table reserva(
   fecha_reserva time,
   dia_reserva time, 
   estado enum ('Pendiente','Finalizado','Progreso') not null default 'Pendiente',
-  primary key (id_reserva),
-  foreign key
-  foreign key
+  primary key (id_reserva)
  );
 
 drop table if exists empleado:
