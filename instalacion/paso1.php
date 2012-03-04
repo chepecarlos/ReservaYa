@@ -16,7 +16,7 @@
     <input type="text" name="Telefono" id="Telefono" />
   </p>
   <p>Slogan:
-    <input type="text" name="Titulo5" />
+    <input type="text" name="slogan" id="slogan" />
   </p>
   <p>    <br>
   	<input type="reset" name="button" id="button" value="Limpiar" />
