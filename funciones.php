@@ -23,7 +23,7 @@ function ejecutarSQL($_ArchivoSQL, $_conexionDB)
 			echo "<br>";
 			echo "Consulta es: $ConsultaSQL";
 			echo "<br>";
-			$registros=mysql_query($ConsultaSQL,conexion) or die("Problemas en el select:".mysql_error());
+			$registros=mysql_query($ConsultaSQL,$_conexionDB) or die("Problemas en el select:".mysql_error());
 			$ConsultaSQL = ""; // Preparo la consulta para continuar con la siguiente sentencia
 			$Pedasos[$i] = '';
 			$HacerSQL = false;
