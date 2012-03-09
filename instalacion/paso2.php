@@ -1,3 +1,23 @@
+<?php
+
+if(isset ($_REQUEST['Nombre'])){
+	
+	$VariableCaptura[0]="Nombre";
+	$VariableCaptura[1]="Direccion";
+	$VariableCaptura[2]="Email";
+	$VariableCaptura[3]="Website";
+	$VariableCaptura[4]="Telefono";
+	$VariableCaptura[5]="slogan";
+	
+	for($i = 0;$i <= 5;$i++){
+		$_SESSION["Empresa[$VariableCaptura[$i]]"]=$_REQUEST["$VariableCaptura[$i]"];
+		}	
+	}
+else{
+	echo "Reenvide el anterior formlario";
+	}
+?>
+
 <p>Registro de Datos del Administrador</p>
 <form method="post" action="?Paso=3">
   <p>Nombre:
