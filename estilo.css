@@ -1,0 +1,10 @@
+body {
+  background-color:#ff0000;
+}
+.reserva{
+  background-color:#ffff00;
+  border-width:1px;
+  border-style:solid;
+  border-color:#000000;
+  text-align:center;
+}
