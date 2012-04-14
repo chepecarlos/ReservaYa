@@ -1,4 +1,4 @@
-Creacion de la todo los datos 
+Creacion de la todo los datos <br>
 <?php
 include("../funciones.php");
 /*Ejecutando el escrip Base.sql*/

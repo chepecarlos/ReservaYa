@@ -7,13 +7,14 @@ require("coneccion.php");
 <title>
 Proyecto ADSII
 </title>
+<link rel="StyleSheet" href="estilo.css" type="text/css">
 </head>
 <body> 
 <div>
 <?php 
 require("cabecera.php");
 ?>
-<div>
+<div class="reserva">
 <?php
 if(isset( $_REQUEST['id'])){
 	echo "Con datos";

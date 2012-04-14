@@ -9,7 +9,7 @@ if(isset ($_REQUEST['Nombre'])){
 	$VariableCaptura[4]="Telefono";
 	$VariableCaptura[5]="slogan";
 	
-	for($i = 0;$i <= 5;$i++){
+	for($i = 0;$i <=count($VariableCaptura);$i++){
 		$_SESSION["Empresa[$VariableCaptura[$i]]"]=$_REQUEST["$VariableCaptura[$i]"];
 		}	
 	}

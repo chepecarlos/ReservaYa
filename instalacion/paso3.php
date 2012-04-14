@@ -1,3 +1,12 @@
+<?php
+if(isset ($_REQUEST['Nombre'])){
+
+}
+else{
+	
+}
+?>
+
 <p>Registro de Cantidad de Mesas</p>
 <form method="post" action="?Paso=777">
   <p>&nbsp;</p>

@@ -7,3 +7,6 @@
   </tr>
 </table>
 
+<?php 
+mysql_close($con);
+?>

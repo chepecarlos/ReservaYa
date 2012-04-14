@@ -1,19 +1,21 @@
 <?php
 /* Archivo de instlacion del sistema */
 require("../coneccion.php");
+/* Inicia las variables de secion */
+session_start();
 ?>
+
 <html>
 <head>
 <title>
-Proyecto ADSII
+Instalacion del Sistema de Mesas
 </title>
 </head>
 <body> 
 <div>
 <?php	
 if(isset ($_REQUEST['Paso'])){
-	switch ($_REQUEST['Paso'])
-    {
+	switch ($_REQUEST['Paso']){
 	case 1:
 		require("paso1.php");
     break;
