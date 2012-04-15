@@ -13,19 +13,20 @@ function ejecutarSQL($_ArchivoSQL, $_conexionDB){
 	 'select', 'update', 'delete', 'insert',
      'create', 'alter', 'drop', 'call', 'set', 'use' ));
     if($HacerSQL){ 
-			if($Pedasos[$i] == $Separador || substr(trim($Pedasos[$i]), -1*(strlen($Separador))) == $Separador) { 
-				// Si terminamos el parseo ejecuto la consulta
-				$ConsultaSQL .= str_replace($Separador, '', $Pedasos[$i]); // Elimino el delimitador
-				$registros=mysql_query($ConsultaSQL,$_conexionDB) or die("Problemas en el select:".mysql_error());
-				$ConsultaSQL = ""; // Preparo la consulta para continuar con la siguiente sentencia
-				$Pedasos[$i] = '';
-				$HacerSQL = false;
-				}
+		if($Pedasos[$i] == $Separador || substr(trim($Pedasos[$i]), -1*(strlen($Separador))) == $Separador) { 
+			// Si terminamos el parseo ejecuto la consulta
+			$ConsultaSQL .= str_replace($Separador, '', $Pedasos[$i]); // Elimino el delimitador
+			$registros=mysql_query($ConsultaSQL,$_conexionDB) or die("Problemas en el select:".mysql_error());
+			$ConsultaSQL = ""; // Preparo la consulta para continuar con la siguiente sentencia
+			$Pedasos[$i] = '';
+			$HacerSQL = false;
+			}
 		}
 	else if($TipoSentencia){
 			$HacerSQL = true;
 			$ConsultaSQL = "";
 		}
+	$ConsultaSQL = "$ConsultaSQL $Pedasos[$i] ";
 	}//fin del for	
 }/* Resive un archivo SQL, una conexion y ejecuta la sentencia */
 

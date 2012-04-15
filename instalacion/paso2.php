@@ -45,7 +45,7 @@ else{
     <input type="text" name="Dui" id="Dui" />
   </p>
   <p>    <br>
-  	<input type="reset" name="button" id="button" value="Limpiar" />
+   <input type="reset" name="button" id="button" value="Limpiar" />
     <?php
       echo '<a href="'.$_SERVER['HTTP_REFERER'].'"><input type="button" name="button" id="button" value="Atras" /></a>';
 	?>
