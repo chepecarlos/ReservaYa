@@ -13,6 +13,7 @@ Instalacion del Sistema de Mesas
 </title>
 </head>
 <body> 
+<div><img src="imagenes/Banner_Instalaccion.png" width="1000" height="288" alt="" id="Cabecera" /></div>
 <div>
 <?php	
 if(isset ($_SESSION['Paso'])){
