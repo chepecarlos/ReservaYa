@@ -1,9 +1,17 @@
 -- Base de datos para el proyecto de ADS II
 
+drop table if exists recepcion;
+drop table if exists empleado;
+drop table if exists reserva;
+drop table if exists cliente;
+drop table if exists config;
+drop table if exists casual;
+drop table if exists mesa;
+
 -- Tabla Cliente
 -- * Esta tabla nos ayudara para manejar la reserva
 -- * de mesas de dicho restaurante
-drop table if exists cliente;
+
 create table cliente(
   id_cliente integer auto_increment not null,
   nombre varchar(50) not null,
@@ -15,7 +23,7 @@ create table cliente(
 -- Tabla Empleado
 -- * Aqui se guardaran la informacion de cada empleado
 -- * y administrador que trabaje en el restaurante
-drop table if exists empleado;
+
 create table empleado(
   id_empleado integer auto_increment not null,
   nombre varchar(50) not null,
@@ -33,7 +41,7 @@ create table empleado(
 -- * Aqui asignaremos la cantidad de mesas que tendra
 -- * el restaurante por personas, ayudara para la 
 -- * disponibilidad de mesas que hay en x momento
-drop table if exists mesa;
+
 create table mesa(
   num_personas_x_mesa int(11) not null,
   mesas int(11),
@@ -44,7 +52,7 @@ create table mesa(
 -- * Si existe usuario que no hagan reservas y llegue
 -- * en x momento al restaurante, se ocupara mas que 
 -- * todo para mineria de datos
-drop table if exists casual;
+
 create table casual(
   id_casual integer auto_increment not null,
   num_personas_x_mesa int(11) not null,
@@ -56,7 +64,7 @@ create table casual(
 -- Tabla Reserva
 -- * Aqui es para ver la infomracion de la reserva
 -- * fecha que se realizo, dia, etc.
-drop table if exists reserva;
+
 create table reserva(
   id_reserva integer auto_increment not null,
   id_cliente integer not null,
@@ -72,7 +80,7 @@ create table reserva(
 -- Tabla recepcion
 -- * Verificara que los datos de la reserva sean correctos
 -- * y agregar datos para hacer una mineria de datos.
-drop table if exists recepcion;
+
 create table recepcion(
   id_cliente integer not null,
   id_empleado integer not null,
@@ -87,7 +95,7 @@ create table recepcion(
 -- Tabla config
 -- * Aqui estara las configuraciones del sistema,
 -- * Datos de la empresa, direccion, etc.
-drop table if exists config;
+
 create table config(
   nombre varchar(100) not null primary key,
   dato   varchar(200) not null
