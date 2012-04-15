@@ -26,6 +26,7 @@ function ejecutarSQL($_ArchivoSQL, $_conexionDB){
 			$HacerSQL = true;
 			$ConsultaSQL = "";
 		}
+	$ConsultaSQL = "$ConsultaSQL $Pedasos[$i] ";
 	}//fin del for	
 }/* Resive un archivo SQL, una conexion y ejecuta la sentencia */
 
