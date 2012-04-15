@@ -7,13 +7,15 @@ require("../coneccion.php");
 <title>
 Proyecto ADSII
 </title>
+<link rel="StyleSheet" href="../estilo.css" type="text/css">
 </head>
+
 <body> 
 <div>
 <?php 
-require("../cabecera.php");
+require ("../cabecera.php");
 ?>
-<div>
+<div class="reserva"><center>
 <?php	
 if(isset ($_REQUEST['Paso'])){
 	switch ($_REQUEST['Paso'])
@@ -35,7 +37,7 @@ if(isset ($_REQUEST['Paso'])){
 else{
 	require("login.php");
 	}
-?>
+?></center>
 </div>
 <?php
 require("../pie.php");
