@@ -2,7 +2,8 @@
 /* Archivo de instlacion del sistema */
 require("../coneccion.php");
 /* Inicia las variables de secion */
-session_start();
+//session_start();
+session_write_close();
 ?>
 
 <html>
@@ -14,8 +15,8 @@ Instalacion del Sistema de Mesas
 <body> 
 <div>
 <?php	
-if(isset ($_REQUEST['Paso'])){
-	switch ($_REQUEST['Paso']){
+if(isset ($_SESSION['Paso'])){
+	switch ($_SESSION['Paso']){
 	case 1:
 		require("paso1.php");
     break;
@@ -32,6 +33,7 @@ if(isset ($_REQUEST['Paso'])){
 	}
 else{
 	require("paso0.php");
+	$_SESSION['Paso']=1;
 	}
 ?>
 </div>

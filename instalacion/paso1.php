@@ -1,5 +1,5 @@
 <p>Registro de Datos de la Empresa</p>
-<form method="post" action="?Paso=2">
+<form method="post" action="">
   <p>Nombre:
     <input type="text" name="Nombre" id="Nombre">
   </p>
@@ -19,10 +19,11 @@
     <input type="text" name="slogan" id="slogan" />
   </p>
   <p>    <br>
+   <input type="submit" value="Reiniciar" <?php $_SESSION['Paso']=1; ?> >	
   	<input type="reset" name="button" id="button" value="Limpiar" />
     <?php
       echo '<a href="'.$_SERVER['HTTP_REFERER'].'"><input type="button" name="button" id="button" value="Atras" /></a>';
 	?>
-    <input type="submit" value="Siquiente" />
+    <input type="submit" value="Siquiente" <?php $_SESSION['Paso']=$_SESSION['Paso']+1; ?> />
   </p>
 </form>

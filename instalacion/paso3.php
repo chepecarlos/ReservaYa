@@ -8,7 +8,7 @@ else{
 ?>
 
 <p>Registro de Cantidad de Mesas</p>
-<form method="post" action="?Paso=777">
+<form method="post" action="">
   <p>&nbsp;</p>
 <p>Tlaba de las Mesas Agregadas</p>
   <table width="37%" border="0" cellspacing="0" cellpadding="0">
@@ -27,10 +27,11 @@ else{
     </tr>
   </table>
   <p><br>
+   <input type="submit" value="Reiniciar" <?php $_SESSION['Paso']=1; ?> >	
     <input type="reset" name="button" id="button" value="Limpiar" />
     <?php
       echo '<a href="'.$_SERVER['HTTP_REFERER'].'"><input type="button" name="button" id="button" value="Atras" /></a>';
 	?>
-    <input type="submit" value="Siquiente" />
+    <input type="submit" value="Siquiente" <?php $_SESSION['Paso']=$_SESSION['Paso']+1; ?> />
   </p>
 </form>

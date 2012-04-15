@@ -5,9 +5,10 @@ include("../funciones.php");
 ejecutarSQL('./Base.sql',$conexion);
 ?>
 
-<form method="post" action="?Paso=777">
+<form method="post" action="">
 Pagina final: 
 <input type="text" name="Titulo">
 <br>
+ <input type="submit" value="Reiniciar" <?php $_SESSION['Paso']=1; ?> >	
 <input type="submit" value="Siquiente">
 </form>
