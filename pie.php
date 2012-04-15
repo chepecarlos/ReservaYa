@@ -1,6 +1,11 @@
 <div class="tabla">
-<div>Home</div>
-<div>2</div>
-<div>3</div>
-<div>4</div>
+<table border="0" align="center" width="1000px">
+<tr>
+<td width="25%" align="center"><div class="color_w">Home</div></td>
+<td width="25%" align="center"><div class="color_w">Login</div></td>
+<td width="25%" align="center"><div class="color_w">Contactos</div></td>
+<td width="25%" align="center"><div class="color_w">FAQ</div></td>
+</tr>
+</table>
+
 </div>

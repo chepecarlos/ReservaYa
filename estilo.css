@@ -18,7 +18,12 @@ body {
 }
 
 .tabla{
-width: 1000px;
-color: #34484E;
-font-family: “Trebuchet MS”, Arial;
+  width: 1000px;
+  border:2px solid gray;
+  background-color:gray;
 }
+
+.color_w{
+color: white;
+}
+
