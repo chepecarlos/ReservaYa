@@ -1,6 +1,6 @@
 <?php
 
-if(isset ($_REQUEST['Nombre'])){
+if(isset ($_REQUEST['Website'])){
 	
 	$VariableCaptura[0]="Nombre";
 	$VariableCaptura[1]="Direccion";
@@ -8,9 +8,12 @@ if(isset ($_REQUEST['Nombre'])){
 	$VariableCaptura[3]="Website";
 	$VariableCaptura[4]="Telefono";
 	$VariableCaptura[5]="slogan";
+	$VariableCaptura[6]="Mesas";
 	
-	for($i = 0;$i <=count($VariableCaptura);$i++){
+	for($i = 0;$i <count($VariableCaptura);$i++){
 		$_SESSION["Empresa[$VariableCaptura[$i]]"]=$_REQUEST["$VariableCaptura[$i]"];
+		echo $_SESSION["Empresa[$VariableCaptura[$i]]"];
+		echo "<br>";
 		}	
 	}
 else{
