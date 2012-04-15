@@ -8,34 +8,43 @@ session_start();
 <html>
 <head>
 <title>
-Instalacion del Sistema de Mesas
+Instalacion de Reserva Ya
 </title>
 </head>
 <body> 
-<div><img src="imagenes/Banner_Instalaccion.png" width="1000" height="288" alt="" id="Cabecera" /></div>
-<div>
-<?php	
-if(isset ($_REQUEST['Paso'])){
-	switch ($_REQUEST['Paso']){
-	case 1:
-		require("paso1.php");
-    break;
-	case 2:
-		require("paso2.php");
-	break;
-	case 3:
-		require("paso3.php");
-	break;
-	case 777:
-		require("paso777.php");
-	break;
-		}
-	}
-else{
-	require("paso0.php");
-	}
-?>
-</div>
+<link rel="StyleSheet" href="estilo.css" type="text/css">
+
+	<center>
+		<div class="CI"></div>
+      <div class="FORM">
+        	<?php	
+				if(isset ($_REQUEST['Paso'])){
+					switch ($_REQUEST['Paso']){
+						case 1:
+							require("paso1.php");
+   	 				break;
+   	 				
+						case 2:
+							require("paso2.php");
+						break;
+						
+						case 3:
+							require("paso3.php");
+						break;
+						
+						case 777:
+							require("paso777.php");
+					break;
+					}
+				}
+				
+				else{
+					require("paso0.php");
+				}
+			?>  
+		</div>
+	</center>
+        
 </body> 
 </html>
 
