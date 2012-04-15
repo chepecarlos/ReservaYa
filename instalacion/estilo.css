@@ -18,3 +18,15 @@ body {
   margin:0px 0px;
   width: 1000px;
 }
+
+.text_l{
+text-align:left;
+}
+
+.text_r{
+text-align:right;
+}
+
+.text_c{
+text-align:center;
+}

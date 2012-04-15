@@ -5,7 +5,7 @@ require("coneccion.php");
 <html>
 <head>
 <title>
-Proyecto ADSII
+Reservacion...
 </title>
 <link rel="StyleSheet" href="estilo.css" type="text/css">
 </head>

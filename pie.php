@@ -1,12 +1,6 @@
-<table width="80%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td>Home</td>
-    <td>Login</td>
-    <td>Contactos</td>
-    <td>FAQ</td>
-  </tr>
-</table>
-
-<?php 
-mysql_close($con);
-?>
+<div class="tabla">
+<div>Home</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+</div>

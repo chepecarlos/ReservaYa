@@ -12,6 +12,15 @@ session_write_close();
 Instalacion de Reserva Ya
 </title>
 </head>
+
+<style type="text/css">
+div
+{
+text-align:justify;
+text-justify:inter-word;
+}
+</style>
+
 <body> 
 <link rel="StyleSheet" href="estilo.css" type="text/css">
 
