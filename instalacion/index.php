@@ -16,8 +16,8 @@ Instalacion del Sistema de Mesas
 <div><img src="imagenes/Banner_Instalaccion.png" width="1000" height="288" alt="" id="Cabecera" /></div>
 <div>
 <?php	
-if(isset ($_SESSION['Paso'])){
-	switch ($_SESSION['Paso']){
+if(isset ($_REQUEST['Paso'])){
+	switch ($_REQUEST['Paso']){
 	case 1:
 		require("paso1.php");
     break;
@@ -34,7 +34,6 @@ if(isset ($_SESSION['Paso'])){
 	}
 else{
 	require("paso0.php");
-	$_SESSION['Paso']=1;
 	}
 ?>
 </div>

@@ -45,11 +45,10 @@ else{
     <input type="text" name="Dui" id="Dui" />
   </p>
   <p>    <br>
-   <input type="submit" value="Reiniciar" <?php $_SESSION['Paso']=1; ?> >	
-  	<input type="reset" name="button" id="button" value="Limpiar" />
+   <input type="reset" name="button" id="button" value="Limpiar" />
     <?php
       echo '<a href="'.$_SERVER['HTTP_REFERER'].'"><input type="button" name="button" id="button" value="Atras" /></a>';
 	?>
-    <input type="submit" value="Siquiente" <?php $_SESSION['Paso']=$_SESSION['Paso']+1; ?> />
+    <input type="submit" value="Siquiente" />
   </p>
 </form>
