@@ -30,6 +30,10 @@ function ejecutarSQL($_ArchivoSQL, $_conexionDB){
 	}//fin del for	
 }/* Resive un archivo SQL, una conexion y ejecuta la sentencia */
 
+function ejecutar_Sentencia($_SentenciaSQL, $_conexionDB){
+	$registros=mysql_query($_SentenciaSQL,$_conexionDB) or die("Problemas en el select:".mysql_error());		
+}
+
 function CaptrarDatosSecion($_Datos) {
 	if(isset ($_REQUEST[$_Datos[0]])){
       echo $_REQUEST[$_Datos[0]];
