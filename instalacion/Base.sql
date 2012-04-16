@@ -31,7 +31,7 @@ create table empleado(
   password varchar(15) not null,
   email varchar(100) not null,
   telefono char(8),
-  fecha_nacimiento time,
+  fecha_nacimiento date,
   dui int(10),
   primary key (id_empleado)
 );
