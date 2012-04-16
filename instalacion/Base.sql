@@ -5,7 +5,6 @@ drop table if exists empleado;
 drop table if exists reserva;
 drop table if exists cliente;
 drop table if exists config;
-drop table if exists casual;
 drop table if exists mesa;
 
 -- Tabla Cliente
@@ -43,22 +42,9 @@ create table empleado(
 -- * disponibilidad de mesas que hay en x momento
 
 create table mesa(
-  num_personas_x_mesa int(11) not null,
-  mesas int(11),
-  primary key (num_personas_x_mesa)
-);
-
--- Tabla casual
--- * Si existe usuario que no hagan reservas y llegue
--- * en x momento al restaurante, se ocupara mas que 
--- * todo para mineria de datos
-
-create table casual(
-  id_casual integer auto_increment not null,
-  num_personas_x_mesa int(11) not null,
-  num_personas int(11) not null,
-  primary key (id_casual),
-  foreign key (num_personas_x_mesa) references mesa (num_personas_x_mesa)
+  nombre_mesa varchar(100) not null,
+  capacidad int(11),
+  primary key (nombre_mesa)
 );
 
 -- Tabla Reserva
@@ -68,12 +54,12 @@ create table casual(
 create table reserva(
   id_reserva integer auto_increment not null,
   id_cliente integer not null,
-  num_personas_x_mesa int(11) not null,
+  nombre_mesa varchar(100) not null,
   fecha_reserva time,
   dia_reserva time, 
   estado enum ('Pendiente','Finalizado','Progreso') default 'Pendiente',
   primary key (id_reserva),
-  foreign key (num_personas_x_mesa) references mesa (num_personas_x_mesa),
+  foreign key (nombre_mesa) references mesa (nombre_mesa),
   foreign key (id_cliente) references cliente (id_cliente)
  );
 
@@ -85,11 +71,9 @@ create table recepcion(
   id_cliente integer not null,
   id_empleado integer not null,
   id_reserva integer not null,
-  id_casual integer not null,
   foreign key (id_cliente) references cliente (id_cliente),
   foreign key (id_empleado) references empleado (id_empleado),
-  foreign key (id_reserva) references reserva (id_reserva),
-  foreign key (id_casual) references casual (id_casual)
+  foreign key (id_reserva) references reserva (id_reserva)
 );
 
 -- Tabla config
