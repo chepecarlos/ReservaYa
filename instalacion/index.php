@@ -2,6 +2,7 @@
 /* Archivo de instlacion del sistema */
 require("../coneccion.php");
 /* Inicia las variables de secion */
+session_write_close();
 session_start();
 ?>
 

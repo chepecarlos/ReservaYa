@@ -1,3 +1,6 @@
+<?php 
+session_write_close();
+?>
 <p>Bienvenidos!</p>
 <p>Este es un instalador, para un sistema de mesas, </p>
 <p>sigue paso a paso las instrucciones que encontraras, </p>
