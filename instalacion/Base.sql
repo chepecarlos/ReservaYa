@@ -68,10 +68,8 @@ create table reserva(
 -- * y agregar datos para hacer una mineria de datos.
 
 create table recepcion(
-  id_cliente integer not null,
   id_empleado integer not null,
   id_reserva integer not null,
-  foreign key (id_cliente) references cliente (id_cliente),
   foreign key (id_empleado) references empleado (id_empleado),
   foreign key (id_reserva) references reserva (id_reserva)
 );
