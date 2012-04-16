@@ -1,14 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
+<title>Perfil...</title>
+<link rel="StyleSheet" href="../estilo.css" type="text/css">
 </head>
 
 <body>
-<p> Perfil</p>
+
+<?php 
+require("../cabecera.php");
+?>
+
+<div class="reserva">
+<p> Perfil</p><center>
 <form id="form1" name="form1" method="post" action="">
-  <table width="25%" border="0" cellspacing="0" cellpadding="0">
+  <table width="50px" border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td>Nombre:</td>
       <td><input type="text" name="Nombre" id="Nombre" /></td>
@@ -30,7 +36,7 @@
       <td><input type="text" name="Telefono" id="Telefono" /></td>
     </tr>
     <tr>
-      <td>Fecha - Nacimiento :</td>
+      <td>Fecha-Nacimiento:</td>
       <td><input type="text" name="F_Nacimiento" id="F_Nacimiento" /></td>
     </tr>
     <tr>
@@ -38,10 +44,13 @@
       <td><input type="text" name="Dui" id="Dui" /></td>
     </tr>
     <tr>
-      <td>&nbsp;</td>
       <td><input type="button" name="button" id="button" value="Actualizar" /></td>
     </tr>
   </table>
-</form>
+</form></center>
+<?php
+require("../pie.php");
+?>
+</div>
 </body>
 </html>
