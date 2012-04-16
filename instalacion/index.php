@@ -53,7 +53,10 @@ text-justify:inter-word;
 			?>  
 		</div>
 	</center>
-        
+<?php
+@mysql_close($conexion);
+?>        
 </body> 
 </html>
+
 
