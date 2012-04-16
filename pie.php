@@ -7,5 +7,8 @@
 <td width="25%" align="center"><div class="color_w">FAQ</div></td>
 </tr>
 </table>
-
+<?php
+@mysql_close($conexion);
+?>
 </div>
+

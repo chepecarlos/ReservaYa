@@ -1,9 +1,14 @@
 <html>
 <head>
-<title>Documento sin título</title>
+<title>Registro...</title>
+<link rel="StyleSheet" href="../estilo.css" type="text/css">
 </head>
 
 <body>
+	<?php 
+		require("../cabecera.php");
+	?>
+	<div class="reserva"><center>
 <p>Nuevo Empleado</p>
 <form id="form1" name="form1" method="post" action="">
   <p>Nombre:
@@ -34,6 +39,10 @@
     <input type="reset" name="button" id="button" value="Limpiar" />
     <input type="submit" value="Crear" />
   </p>
-</form>
+</form></center>
+<?php
+require("../pie.php");
+?>
+</div>
 </body>
 </html>
