@@ -12,7 +12,7 @@ Registro de Datos de la Empresa
     <input type="text" name="Telefono" id="Telefono" /><br>
  Slogan:
     <input type="text" name="slogan" id="slogan" /><br>
- Mesas:
+ Grupos de Mesas:
     <input type="text" name="Mesas" id="Mesas" /><br>
       <br>
    <input type="reset" name="button" id="button" value="Limpiar" />

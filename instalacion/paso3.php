@@ -16,31 +16,34 @@ if(isset ($_REQUEST['Dui'])){
 		}	
 	}
 	else{
-	
+	 echo "no se enviaron datos";
 	}
 ?>
 
-<p>Registro de Cantidad de Mesas</p>
+Registro de Cantidad de Mesas
 <form method="post" action="?Paso=777">
-<p>Tlaba de las Mesas Agregadas</p>
-  <table width="37%" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td width="34%">Cantidad</td>
-      <td width="33%"># Personas</td>
-      <td width="33%">&nbsp;</td>
-    </tr>
+Tlaba de las Mesas Agregadas
+  <table border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td>
-        <input type="text" name="Cantidad" id="Cantidad" />
-      </td>
-      <?php
-      echo  $_SESSION["Empresa[Mesas]"];
-      ?>
-      <td><input type="text" name="PersonasxMesa" id="PersonasxMesa" /></td>
-      <td><input type="submit" name="button2" id="button2" value="Agregar" />
-      
-      <input type="button" name="button3" id="button3" value="Eliminar" /></td>
+		  Nombre de Mesa
+	 </td>
+     <td>
+		  Capacidad
+     </td>
     </tr>
+    <?php
+	 for($i = 1; $i <= $_SESSION["Empresa[Mesas]"]; $i += 1){
+	?>
+	<tr> 
+    <td>
+		<input type="text" name="Nombre_<?php echo $i; ?>" id="Nombre_<?php echo $i; ?>" />
+    </td>
+    <td>
+		 <input type="text" name="Capaidad_<?php echo $i; ?>" id="Capaidad_<?php echo $i; ?>" />
+    </td>
+    </tr>
+    <?php } ?>
   </table>
   <p><br>
     <input type="reset" name="button" id="button" value="Limpiar" />
