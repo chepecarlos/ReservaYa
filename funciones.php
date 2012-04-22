@@ -31,8 +31,9 @@ function ejecutarSQL($_ArchivoSQL, $_conexionDB){
 }/* Resive un archivo SQL, una conexion y ejecuta la sentencia */
 
 function ejecutar_Sentencia($_SentenciaSQL, $_conexionDB){
-	$registros=mysql_query($_SentenciaSQL,$_conexionDB) or die("Problemas en el select:".mysql_error());		
-}
+	$registros=mysql_query($_SentenciaSQL,$_conexionDB) or die("Problemas en el select:".mysql_error());
+	return $registros;		
+}/*ingresa datos a la base*/
 
 function CaptrarDatosSecion($_Datos) {
 	if(isset ($_REQUEST[$_Datos[0]])){

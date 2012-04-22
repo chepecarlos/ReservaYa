@@ -1,19 +1,19 @@
 <?php  
 /* pagina de inicio del sistema */
 require("coneccion.php"); 
+require("funciones.php");
 ?>
-<script language="javascript" type="text/javascript" src="datetimepicker.js">
-
-//Date Time Picker script- by TengYong Ng of http://www.rainforestnet.com
-//Script featured on JavaScript Kit (http://www.javascriptkit.com)
-//For this script, visit http://www.javascriptkit.com 
-
-</script>
 <html>
 <head>
 <title>
 Reservacion...
 </title>
+	<script src="src/js/jscal2.js"></script>
+    <script src="src/js/lang/en.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/css/jscal2.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/border-radius.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/steel/steel.css" />
+
 <link rel="StyleSheet" href="estilo.css" type="text/css">
 </head>
 <body> 

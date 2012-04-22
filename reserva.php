@@ -13,7 +13,16 @@
     <input type="text" name="Captcha" id="Captcha">
   </p>
   <p>Fecha de Reserva : 
-    <input type="Text" name="Reserva" id="Reserva" maxlength="25" size="25"><a href="javascript:NewCal('Reserva','ddmmmyyyy',true,12)"><img src="imagenes/cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>
+  <input type="Text" size="30" name="Reserva" id="Reserva" /><button id="f_btn1">...</button><br />
+    <script type="text/javascript">//<![CDATA[
+      Calendar.setup({
+        inputField : "Reserva",
+        trigger    : "f_btn1",
+        onSelect   : function() { this.hide() },
+        showTime   : 12,
+        dateFormat : "%Y-%m-%d %I:%M %p"
+      });
+    //]]></script> 
   </p>
   <p>
     <input type="submit" name="button" id="button" value="Enviar">
