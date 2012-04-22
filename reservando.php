@@ -11,7 +11,13 @@
 
 	if( $VariableCaptura[4] == '2'){
 		if($VariableCaptura[0] <> '' and $VariableCaptura[1] <> ''){
-			echo "A insertar base de datos";
+			if( eregi ("@",$VariableCaptura[2]) or  $VariableCaptura[2] == ""){
+				echo "ingresar en la base de datos";
+				}
+			else{
+				echo "Error con el correco electonico";
+				}
+				
 			}
 		else{
 			echo "No se ingreso en nombre y/o Apellido";
