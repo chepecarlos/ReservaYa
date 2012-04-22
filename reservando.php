@@ -8,7 +8,12 @@
 
 	if( $VariableCaptura[4] == '2'){
 		if($VariableCaptura[0] <> '' and $VariableCaptura[1] <> ''){
+<<<<<<< HEAD
 			if( preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i",$VariableCaptura[2]) or  $VariableCaptura[2] == "".$_REQUEST["Apellido"].""){
+=======
+			if( preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i",$VariableCaptura[2]) or  $VariableCaptura[2] == ""){
+				if( $VariableCaptura[3] <> '' ){
+>>>>>>> c4b7a765121a2efa850e75bf9457b80b3d86db84
 				echo "ingresar en la base de datos";
 				## consulta de si exite el usuario
 				$result = mysql_query("SELECT id_cliente FROM cliente where nombre='".$_REQUEST["Nombre"]."' and apellido=''");
@@ -24,7 +29,10 @@
 				$row = ejecutar_Sentencia($result);
 				$row = mysql_fetch_array($result);
 				}
-				
+			}
+			else{
+			echo "Error en la fecha";
+			}
 				}
 			else{
 				echo "Error con el correco electonico";
