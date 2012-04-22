@@ -10,17 +10,16 @@
 
 echo "<table border='1'>
 <tr>
-<th>Firstname</th>
-<th>Lastname</th>
+<th>Id_Cliente</th>
 </tr>";
 
-$result = mysql_query("SELECT * FROM cliente");
+$result = mysql_query("SELECT id_cliente FROM cliente");
 
 while($row = mysql_fetch_array($result))
   {
   echo "<tr>";
   echo "<td>" . $row['id_cliente'] . "</td>";
-  echo "<td>" . $row['nombre'] . "</td>";
+  //echo "<td>" . $row['nombre'] . "</td>";
   echo "</tr>";
   }
 echo "</table>";

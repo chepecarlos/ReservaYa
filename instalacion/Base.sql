@@ -19,6 +19,8 @@ create table cliente(
   primary key (id_cliente)
  );
 
+alter table cliente add unique index(nombre, apellido);
+
 -- Tabla Empleado
 -- * Aqui se guardaran la informacion de cada empleado
 -- * y administrador que trabaje en el restaurante
@@ -76,7 +78,9 @@ create table recepcion(
 
 -- Tabla config
 -- * Aqui estara las configuraciones del sistema,
--- * Datos de la empresa, direccion, etc.
+-- * Datos de la empresa, direccion, etc.alter table votes add unique index(user, email, address);
+
+
 
 create table config(
   nombre varchar(100) not null primary key,
