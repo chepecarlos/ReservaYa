@@ -23,8 +23,8 @@ require("cabecera.php");
 ?>
 <div class="reserva">
 <?php
-if(isset( $_REQUEST['id'])){
-	echo "Con datos";
+if(isset( $_REQUEST['Nombre'])){
+	require("reservando.php");
 	}
 else{
 	require("reserva.php");
