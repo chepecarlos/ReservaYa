@@ -6,8 +6,18 @@
 	$VariableCaptura[3]=$_REQUEST["Reserva"];
 	$VariableCaptura[4]=$_REQUEST["Captcha"];
 
+	$consulta_[0] = "insert into (nombre,apellido,email) cliente values('".$_REQUEST["Nombre"]."','".$_REQUEST["Apellido"]."','".$_REQUEST["Email"]."')";
 
-	$consulta_[0] = "insert into (nombre,apellido,email) cliente values('".$_SESSION["Nombre"]."','".$_SESSION["[Apellido]"]."','".$_SESSION["[Email]"]."')";
+$result = mysql_query("SELECT * FROM cliente");
+
+while($row = mysql_fetch_array($result))
+  {
+  echo "<tr>";
+  echo "<td>" . $row['id_cliente'] . "</td>";
+  echo "<td>" . $row['nombre'] . "</td>";
+  echo "</tr>";
+  }
+echo "</table>";
 
 	if( $VariableCaptura[4] == '2'){
 		echo "listo";
