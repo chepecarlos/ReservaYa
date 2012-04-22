@@ -20,7 +20,13 @@ while($row = mysql_fetch_array($result))
 echo "</table>";
 
 	if( $VariableCaptura[4] == '2'){
-		echo "listo";
+		if($VariableCaptura[0] <> '' and $VariableCaptura[1] <> ''){
+			echo "A insertar base de datos";
+			}
+		else{
+			echo "No se ingreso en nombre y/o Apellido";
+			require("reserva.php"); 
+			}
 		}
 	else{
 		echo "<br>¿Erres real mente un humano?</br> <br> Error el Captcha </br>";
