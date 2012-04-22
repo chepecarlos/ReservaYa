@@ -6,28 +6,25 @@
 	$VariableCaptura[3]=$_REQUEST["Reserva"];
 	$VariableCaptura[4]=$_REQUEST["Captcha"];
 
-	$consulta_[0] = "insert into (nombre,apellido,email) cliente values('".$_REQUEST["Nombre"]."','".$_REQUEST["Apellido"]."','".$_REQUEST["Email"]."')";
-
-echo "<table border='1'>
-<tr>
-<th>Id_Cliente</th>
-</tr>";
-
-$result = mysql_query("SELECT id_cliente FROM cliente");
-
-while($row = mysql_fetch_array($result))
-  {
-  echo "<tr>";
-  echo "<td>" . $row['id_cliente'] . "</td>";
-  //echo "<td>" . $row['nombre'] . "</td>";
-  echo "</tr>";
-  }
-echo "</table>";
-
 	if( $VariableCaptura[4] == '2'){
 		if($VariableCaptura[0] <> '' and $VariableCaptura[1] <> ''){
 			if( preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i",$VariableCaptura[2]) or  $VariableCaptura[2] == ""){
 				echo "ingresar en la base de datos";
+				## consulta de si exite el usuario
+				$result = mysql_query("SELECT id_cliente FROM cliente");
+				$row = ejecutar_Sentencia($result);
+				$row = mysql_fetch_array($result);
+				
+				echo $row['id_cliente'];
+				if ($row['id_cliente'] == ''){
+				$consulta_[0] = "insert into (nombre,apellido,email) cliente values('".$_REQUEST["Nombre"]."','".$_REQUEST["Apellido"]."','".$_REQUEST["Email"]."')";
+				#Si no existe que lo agrege
+				$row = ejecutar_Sentencia($consulta_[0]);
+				## busca el ide de nuevo
+				$row = ejecutar_Sentencia($result);
+				$row = mysql_fetch_array($result);
+				}
+				
 				}
 			else{
 				echo "Error con el correco electonico";
