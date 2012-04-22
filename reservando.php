@@ -1,4 +1,3 @@
-
 <?php
 	$VariableCaptura[0]=$_REQUEST["Nombre"];
 	$VariableCaptura[1]=$_REQUEST["Apellido"];
@@ -14,11 +13,10 @@
 				$result = mysql_query("SELECT id_cliente FROM cliente where nombre='".$_REQUEST["Nombre"]."' and apellido='".$_REQUEST["Apellido"]."'");
 				$row = mysql_fetch_array($result);
 				
-				
 				if ($row['id_cliente'] == ''){
-				$consulta_[0] = "insert into (nombre,apellido,email) cliente values('".$_REQUEST["Nombre"]."','".$_REQUEST["Apellido"]."','".$_REQUEST["Email"]."')";
+				$consulta_[0] = "insert into cliente values('".$_REQUEST["Nombre"]."','".$_REQUEST["Apellido"]."','".$_REQUEST["Email"]."')";
 				#Si no existe que lo agrege
-				$row =  mysql_query($consulta_[0])  or die("Problemas en el select:".mysql_error());
+				$row =  mysql_query($consulta_[0]) or die("Problemas en el select:".mysql_error());
 				## busca el ide de nuevo
 				$result = mysql_query("SELECT id_cliente FROM cliente where nombre='".$_REQUEST["Nombre"]."' and apellido='".$_REQUEST["Apellido"]."'");
 				$row = mysql_fetch_array($result);
