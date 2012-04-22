@@ -8,6 +8,12 @@
 
 	$consulta_[0] = "insert into (nombre,apellido,email) cliente values('".$_REQUEST["Nombre"]."','".$_REQUEST["Apellido"]."','".$_REQUEST["Email"]."')";
 
+echo "<table border='1'>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+</tr>";
+
 $result = mysql_query("SELECT * FROM cliente");
 
 while($row = mysql_fetch_array($result))
