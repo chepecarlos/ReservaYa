@@ -5,12 +5,15 @@
 	$VariableCaptura[2]=$_REQUEST["Email"];
 	$VariableCaptura[3]=$_REQUEST["Reserva"];
 	$VariableCaptura[4]=$_REQUEST["Captcha"];
-	
+
+
+	$consulta_[0] = "insert into (nombre,apellido,email) cliente values('".$_SESSION["Nombre"]."','".$_SESSION["[Apellido]"]."','".$_SESSION["[Email]"]."')";
+
 	if( $VariableCaptura[4] == '2'){
 		echo "listo";
 		}
 	else{
-		echo "¿Erres real mente un humano? <br> Error el Captcha <br>";
+		echo "<br>¿Erres real mente un humano?</br> <br> Error el Captcha </br>";
 		require("reserva.php"); 
 		}	
 ?>
