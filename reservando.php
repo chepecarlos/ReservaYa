@@ -8,22 +8,22 @@
 
 	if( $VariableCaptura[4] == '2'){
 		if($VariableCaptura[0] <> '' and $VariableCaptura[1] <> ''){
-			if( preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i",$VariableCaptura[2]) or  $VariableCaptura[2] == "".$_REQUEST["Apellido"].""){
+			if( preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i",$VariableCaptura[2]) or  $VariableCaptura[2] == ""){
 				echo "ingresar en la base de datos";
 				## consulta de si exite el usuario
 				$result = mysql_query("SELECT id_cliente FROM cliente where nombre='".$_REQUEST["Nombre"]."' and apellido='".$_REQUEST["Apellido"]."'");
-				$row = ejecutar_Sentencia($result);
 				$row = mysql_fetch_array($result);
 				
-				echo $row['id_cliente'];
+				
 				if ($row['id_cliente'] == ''){
 				$consulta_[0] = "insert into (nombre,apellido,email) cliente values('".$_REQUEST["Nombre"]."','".$_REQUEST["Apellido"]."','".$_REQUEST["Email"]."')";
 				#Si no existe que lo agrege
-				$row = ejecutar_Sentencia($consulta_[0]);
+				$row =  mysql_query($consulta_[0])  or die("Problemas en el select:".mysql_error());
 				## busca el ide de nuevo
-				$row = ejecutar_Sentencia($result);
+				$result = mysql_query("SELECT id_cliente FROM cliente where nombre='".$_REQUEST["Nombre"]."' and apellido='".$_REQUEST["Apellido"]."'");
 				$row = mysql_fetch_array($result);
 				}
+				echo $row['id_cliente'];
 				}
 			else{
 				echo "Error con el correco electonico";
