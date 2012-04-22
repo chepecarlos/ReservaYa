@@ -13,10 +13,13 @@
 				$result = mysql_query("SELECT id_cliente FROM cliente where nombre='".$_REQUEST["Nombre"]."' and apellido='".$_REQUEST["Apellido"]."'");
 				$row = mysql_fetch_array($result);
 				
-				if ($row['id_cliente'] == ''){
-				$consulta_[0] = "insert into cliente values('".$_REQUEST["Nombre"]."','".$_REQUEST["Apellido"]."','".$_REQUEST["Email"]."')";
+				if ($row['id_cliente'] <> ' '){
+				$consulta_[0] = "insert into cliente (nombre, apellido, email) values('".$_REQUEST["Nombre"]."','".$_REQUEST["Apellido"]."','".$_REQUEST["Email"]."')";
+				echo "<br>";
+				echo $consulta_[0];
 				#Si no existe que lo agrege
 				$row =  mysql_query($consulta_[0]) or die("Problemas en el select:".mysql_error());
+				echo "Estoy sale hp";
 				## busca el ide de nuevo
 				$result = mysql_query("SELECT id_cliente FROM cliente where nombre='".$_REQUEST["Nombre"]."' and apellido='".$_REQUEST["Apellido"]."'");
 				$row = mysql_fetch_array($result);
