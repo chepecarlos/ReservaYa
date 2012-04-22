@@ -13,7 +13,7 @@
     <input type="text" name="Captcha" id="Captcha">
   </p>
   <p>Fecha de Reserva : 
-  <input type="Text" size="30" name="Reserva" id="Reserva" /><button id="f_Reserva">...</button><br />
+  <input type="Text" name="Reserva" id="Reserva" /><button id="f_Reserva">...</button><br />
     <script type="text/javascript">//<![CDATA[
     var now = new Date();
       Calendar.setup({

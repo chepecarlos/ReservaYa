@@ -9,6 +9,7 @@
 	if( $VariableCaptura[4] == '2'){
 		if($VariableCaptura[0] <> '' and $VariableCaptura[1] <> ''){
 			if( preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i",$VariableCaptura[2]) or  $VariableCaptura[2] == ""){
+				if( $VariableCaptura[3] <> '' ){
 				echo "ingresar en la base de datos";
 				## consulta de si exite el usuario
 				$result = mysql_query("SELECT id_cliente FROM cliente");
@@ -24,7 +25,10 @@
 				$row = ejecutar_Sentencia($result);
 				$row = mysql_fetch_array($result);
 				}
-				
+			}
+			else{
+			echo "Error en la fecha";
+			}
 				}
 			else{
 				echo "Error con el correco electonico";
