@@ -57,7 +57,7 @@ create table reserva(
   nombre_mesa varchar(100) not null,
   fecha_reserva time,
   dia_reserva time, 
-  estado enum ('Pendiente','Finalizado','Progreso') default 'Pendiente',
+  estado enum ('Pendiente','Finalizado','Progreso','Eliminado') default 'Pendiente',
   primary key (id_reserva),
   foreign key (nombre_mesa) references mesa (nombre_mesa),
   foreign key (id_cliente) references cliente (id_cliente)

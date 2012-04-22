@@ -30,6 +30,7 @@ $consulta_[4] = "insert into config values('Empresa_Telefono','".$_SESSION["Empr
 $consulta_[5] = "insert into config values('Empresa_slogan','".$_SESSION["Empresa[slogan]"]."')";
 $consulta_[6] = "insert into config values('Empresa_Mesas','".$_SESSION["Empresa[Mesas]"]."')";
 $consulta_[7] = "insert into empleado (nombre, apellido, password, email,telefono,fecha_nacimiento,dui) values ('".$_SESSION["Administrador[Nombre]"]."','".$_SESSION["Administrador[Apellido]"]."','".$_SESSION["Administrador[Password]"]."','".$_SESSION["Administrador[Email]"]."','".$_SESSION["Administrador[Telefono]"]."','".$_SESSION["Administrador[F_Nacimiento]"]."','".$_SESSION["Administrador[Dui]"]."')";
+$consulta_[9] = "insert into config values('Duracion de Reserva','30')";
 //$consulta_[8] = "insert into mesa (nombre_mesa,capacidad) values ('".$_REQUEST["Nombre_$i"]."','".$_REQUEST["Capaidad_$i"]."')";
 
 for($i = 1; $i <= 7 ; $i += 1){
