@@ -12,7 +12,7 @@
 				if( $VariableCaptura[3] <> '' ){
 				echo "ingresar en la base de datos";
 				## consulta de si exite el usuario
-				$result = mysql_query("SELECT id_cliente FROM cliente");
+				$result = mysql_query("SELECT id_cliente FROM cliente where nombre='".$_REQUEST["Nombre"]."' and apellido='.$_REQUEST["Apellido"]."'");
 				$row = ejecutar_Sentencia($result);
 				$row = mysql_fetch_array($result);
 				
