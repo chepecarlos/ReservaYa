@@ -9,7 +9,7 @@ require("funciones.php");
 Reservacion...
 </title>
 	<script src="src/js/jscal2.js"></script>
-    <script src="src/js/lang/en.js"></script>
+    <script src="src/js/lang/es.js"></script>
     <link rel="stylesheet" type="text/css" href="src/css/jscal2.css" />
     <link rel="stylesheet" type="text/css" href="src/css/border-radius.css" />
     <link rel="stylesheet" type="text/css" href="src/css/steel/steel.css" />

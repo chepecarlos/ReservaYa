@@ -13,14 +13,16 @@
     <input type="text" name="Captcha" id="Captcha">
   </p>
   <p>Fecha de Reserva : 
-  <input type="Text" size="30" name="Reserva" id="Reserva" /><button id="f_btn1">...</button><br />
+  <input type="Text" size="30" name="Reserva" id="Reserva" /><button id="f_Reserva">...</button><br />
     <script type="text/javascript">//<![CDATA[
+    var now = new Date();
       Calendar.setup({
         inputField : "Reserva",
-        trigger    : "f_btn1",
+        trigger    : "f_Reserva",
         onSelect   : function() { this.hide() },
+        min       : now,
         showTime   : 12,
-        dateFormat : "%Y-%m-%d %I:%M %p"
+        dateFormat : "%Y/%m/%d/%I:%M %p"
       });
     //]]></script> 
   </p>
