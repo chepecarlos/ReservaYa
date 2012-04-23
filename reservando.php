@@ -32,9 +32,12 @@
 				$result =  mysql_query($Mesas_total) or die("Problemas en el select de mesas:".mysql_error());
 				$result  = mysql_fetch_array($result);
 				echo "Total de mesas: ".$result['cantidad'];
+				$Mesas_total = $result['cantidad'];
 				##Consulta para saber canitdad de personas 
 				$Mesas_reservadas = "select count(*) as reserva from reserva where timestampdiff(minute,`dia_reserva`,'".$_REQUEST["Reserva"]."') <30 and timestampdiff(minute,`dia_reserva`,'".$_REQUEST["Reserva"]."') >-30 ";
-				
+				$result =  mysql_query($Mesas_reservadas) or die("Problemas en el select de mesas:".mysql_error());
+				$result  = mysql_fetch_array($result);
+				echo "Mesas reservadas: ".$result['reserva'];
 				##ingresa en reserva el ide, nombre_mesa, fecha_reserva 
 				}
 			else{
