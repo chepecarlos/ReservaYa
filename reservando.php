@@ -29,7 +29,7 @@
 				}
 				echo "Usuario: ".$_REQUEST["Nombre"]." ".$_REQUEST["Apellido"]."<br>";
 				##alguna mesa de n personas tiene reserva para para el intervalo de la mesas
-				$Mesas_total =""#consulta para obtener numero de mesas
+				$Mesas_total ="SELECT COUNT(*) as cantidad FROM mesa";#consulta para obtener numero de mesas
 				$result =  mysql_query($Mesas_total) or die("Problemas en el select de mesas:".mysql_error());
 				##ingresa en reserva el ide, nombre_mesa, fecha_reserva 
 				
