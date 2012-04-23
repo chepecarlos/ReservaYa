@@ -37,8 +37,8 @@ $consulta_[7] = "insert into empleado (nombre, apellido, password, email,telefon
 $consulta_[9] = "insert into config values('Duracion de Reserva','30')";
 
 for($i = 1; $i <= 7 ; $i += 1){
-echo $consulta_[$i];
-#ejecutar_Sentencia($consulta_[$i], $conexion);
+#echo $consulta_[$i];
+ejecutar_Sentencia($consulta_[$i], $conexion);
 #echo "<br>";
 }
 for($i = 1; $i <= $_SESSION["Empresa[Mesas]"]; $i += 1){
@@ -48,6 +48,9 @@ $consulta = "insert into mesa (nombre_mesa,capacidad) values ('".$_SESSION["Nomb
 ejecutar_Sentencia($consulta, $conexion);	
 }
 ?>
+Felicidades ya tiene instalado el sistema <br>
+Ya puede borrar el directorio instalacion <br>
+Que disfrute el sistema
 <!--<form method="post" action="?Paso=777">
 #Pagina final: 
 
