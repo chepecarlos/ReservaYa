@@ -29,9 +29,13 @@
 ?>
    Reservar una besa para:
    <select name="Mesa">
-	 <option value="2">Dos personas</option>
-	 <option value="3">tres personas</option>
-     <option value="4">cuatr Personas</option>  
+<?php
+$result = mysql_query($consulta) or die("Problemas en el select:".mysql_error());
+while($row = mysql_fetch_array($result))
+  {
+  echo "<option value=\"".$row['capacidad']."\">".$row['capacidad']." Personas</option>";
+  }
+?> 
    </select>
   </p>
   <p>1+1 =  
