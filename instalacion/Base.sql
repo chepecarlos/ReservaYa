@@ -27,7 +27,7 @@ alter table cliente add unique index(nombre, apellido);
 
 create table empleado(
   id_empleado integer auto_increment not null,
-  usuario varchar(100) not null
+  usuario varchar(100) not null,
   nombre varchar(50) not null,
   apellido varchar(50) not null,
   rol enum ('administrador', 'empleado') default 'empleado',
