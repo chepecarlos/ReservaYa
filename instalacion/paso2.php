@@ -51,7 +51,7 @@ else{
     <input type="text" name="Telefono" id="Telefono" />
   </p>
   <p>Fecha - Nacimiento :
-    <input type="text" name="F_Nacimiento" id="F_Nacimiento" /><button id="f_Nacimiento">...</button><br />
+    <input type="text" name="F_Nacimiento" id="F_Nacimiento" DISABLED /><button id="f_Nacimiento"><img src="../imagenes/cal.gif" alt="Calendario" /></button><br />
     <script type="text/javascript">//<![CDATA[
     var now = new Date();
       Calendar.setup({
