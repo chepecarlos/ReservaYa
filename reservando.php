@@ -7,6 +7,7 @@
 	$variableCaptura[5]= "0";##ID del clienta
 
 	if(strtoupper($_REQUEST["captcha"]) == $_SESSION["captcha"]){
+		$_SESSION["captcha"] = md5(rand()*time());
 		if($VariableCaptura[0] <> '' and $VariableCaptura[1] <> ''){
 			if( preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i",$VariableCaptura[2]) or  $VariableCaptura[2] == ""){
 				## consulta de si exite el usuario
@@ -62,6 +63,7 @@
 			}
 		}
 	else{
+		$_SESSION["captcha"] = md5(rand()*time());
 		echo "<br>¿Erres real mente un humano?</br> <br> Error el Captcha </br>";
 		require("reserva.php"); 
 		}	
