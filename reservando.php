@@ -5,7 +5,7 @@
 	$VariableCaptura[3]=$_REQUEST["Reserva"];
 	$VariableCaptura[4]=$_REQUEST["Captcha"];
 	$VariableCaptura[5]=$_REQUEST["Mesa"];
-	$variableCaptura[6];##ID del clienta
+	$variableCaptura[6]= "0";##ID del clienta
 
 	if( $VariableCaptura[4] == '2'){
 		if($VariableCaptura[0] <> '' and $VariableCaptura[1] <> ''){
@@ -14,25 +14,26 @@
 				$result = mysql_query("SELECT id_cliente FROM cliente where nombre='".$_REQUEST["Nombre"]."' and apellido='".$_REQUEST["Apellido"]."'");
 				$row = mysql_fetch_array($result);
 				
-				if ($row['id_cliente'] <> ' '){
+				if ($row['id_cliente'] == ''){
 				$consulta_[0] = "insert into cliente (nombre, apellido, email) values('".$_REQUEST["Nombre"]."','".$_REQUEST["Apellido"]."','".$_REQUEST["Email"]."')";
 				echo "<br>";
-				echo $consulta_[0];
+				echo $consulta_[0]."<br>";
 				#Si no existe que lo agrege
-				$row =  mysql_query($consulta_[0]) or die("Problemas en el select:".mysql_error());
-				echo "Estoy sale hp";
+				$row =  mysql_query($consulta_[0]) or die("Problemas en el ingresar de usuario: ".mysql_error());
 				## busca el ide de nuevo
 				$result = mysql_query("SELECT id_cliente FROM cliente where nombre='".$_REQUEST["Nombre"]."' and apellido='".$_REQUEST["Apellido"]."'");
 				$row = mysql_fetch_array($result);
 				}
 				$variableCaptura[6] = $row['id_cliente'];
-				}
+				
 				echo "Usuario: ".$_REQUEST["Nombre"]." ".$_REQUEST["Apellido"]."<br>";
 				##alguna mesa de n personas tiene reserva para para el intervalo de la mesas
 				$Mesas_total ="SELECT COUNT(*) as cantidad FROM mesa";#consulta para obtener numero de mesas
 				$result =  mysql_query($Mesas_total) or die("Problemas en el select de mesas:".mysql_error());
+				$result  = mysql_fetch_array($result);
+				echo "cantodad de mesas ".$result['cantidad'];
 				##ingresa en reserva el ide, nombre_mesa, fecha_reserva 
-				
+				}
 			else{
 				echo "Error con el correco electonico";
 				}
