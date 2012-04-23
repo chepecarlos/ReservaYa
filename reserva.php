@@ -25,7 +25,7 @@
   </p>
   <p>
 <?php
-   $Sonsulta="";
+   $consulta="SELECT min(capacidad) as capacidad FROM mesa WHERE capacidad group by capacidad";
 ?>
    Reservar una besa para:
    <select name="Mesa">
