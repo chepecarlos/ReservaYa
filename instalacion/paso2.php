@@ -13,7 +13,7 @@ if(isset ($_REQUEST['Website'])){
 	for($i = 0;$i <count($VariableCaptura);$i++){
 		if( $_REQUEST["$VariableCaptura[$i]"] <> ''){
 			$_SESSION["Empresa[$VariableCaptura[$i]]"]=$_REQUEST["$VariableCaptura[$i]"];
-				if($i ==  2 and !preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i",$VariableCaptura[2])){
+				if($i ==  2 and !preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i",$_REQUEST["$VariableCaptura[2]"])){
 					echo "Falto ingresar ".$VariableCaptura[$i]."<br>";
 			        require("paso1.php");
 			        return;
