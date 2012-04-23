@@ -39,6 +39,8 @@ create table empleado(
   primary key (id_empleado)
 );
 
+alter table empleado add unique index(usuario);
+
 -- Tabla Mesa
 -- * Aqui asignaremos la cantidad de mesas que tendra
 -- * el restaurante por personas, ayudara para la 
