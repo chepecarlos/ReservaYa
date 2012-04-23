@@ -31,13 +31,22 @@
 				$Mesas_total ="SELECT COUNT(*) as cantidad FROM mesa";#consulta para obtener numero de mesas
 				$result =  mysql_query($Mesas_total) or die("Problemas en el select de mesas:".mysql_error());
 				$result  = mysql_fetch_array($result);
-				echo "Total de mesas: ".$result['cantidad'];
+				echo "Total de mesas: ".$result['cantidad']."<br>";
 				$Mesas_total = $result['cantidad'];
 				##Consulta para saber canitdad de personas 
 				$Mesas_reservadas = "select count(*) as reserva from reserva where timestampdiff(minute,`dia_reserva`,'".$_REQUEST["Reserva"]."') <30 and timestampdiff(minute,`dia_reserva`,'".$_REQUEST["Reserva"]."') >-30 ";
 				$result =  mysql_query($Mesas_reservadas) or die("Problemas en el select de mesas:".mysql_error());
 				$result  = mysql_fetch_array($result);
-				echo "Mesas reservadas: ".$result['reserva'];
+				echo "Mesas reservadas: ".$result['reserva']."<br>";
+				$Mesas_reservadas = $result['reserva'];
+				$procentaje = $Mesas_reservadas / $Mesas_total * 100;
+				if($procentaje < 25){
+					echo "No se puede ingresar";
+					}
+				else{
+					echo "Se puede registrar existe bacantes";
+					}	
+				echo "<br>";	
 				##ingresa en reserva el ide, nombre_mesa, fecha_reserva 
 				}
 			else{
