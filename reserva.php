@@ -27,7 +27,7 @@
 <?php
    $consulta="SELECT min(capacidad) as capacidad FROM mesa WHERE capacidad group by capacidad";
 ?>
-   Reservar una besa para:
+   Reservar una mesa para:
    <select name="Mesa">
 <?php
 $result = mysql_query($consulta) or die("Problemas en el select:".mysql_error());
@@ -38,8 +38,9 @@ while($row = mysql_fetch_array($result))
 ?> 
    </select>
   </p>
-  <p>1+1 =  
-    <input type="text" name="Captcha" id="Captcha">
+  <p>
+    <img src="captcha.php" /><br/>
+	<input type="text" size="16" name="captcha" />
   </p>
   <p>
     <input type="submit" name="button" id="button" value="Enviar">

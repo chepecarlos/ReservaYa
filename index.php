@@ -1,5 +1,6 @@
 <?php  
 /* pagina de inicio del sistema */
+session_start();
 require("coneccion.php"); 
 require("funciones.php");
 ?>

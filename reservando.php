@@ -3,11 +3,10 @@
 	$VariableCaptura[1]=$_REQUEST["Apellido"];
 	$VariableCaptura[2]=$_REQUEST["Email"];
 	$VariableCaptura[3]=$_REQUEST["Reserva"];
-	$VariableCaptura[4]=$_REQUEST["Captcha"];
-	$VariableCaptura[5]=$_REQUEST["Mesa"];
-	$variableCaptura[6]= "0";##ID del clienta
+	$VariableCaptura[4]=$_REQUEST["Mesa"];
+	$variableCaptura[5]= "0";##ID del clienta
 
-	if( $VariableCaptura[4] == '2'){
+	if(strtoupper($_REQUEST["captcha"]) == $_SESSION["captcha"]){
 		if($VariableCaptura[0] <> '' and $VariableCaptura[1] <> ''){
 			if( preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i",$VariableCaptura[2]) or  $VariableCaptura[2] == ""){
 				## consulta de si exite el usuario
@@ -24,7 +23,7 @@
 				$result = mysql_query("SELECT id_cliente FROM cliente where nombre='".$_REQUEST["Nombre"]."' and apellido='".$_REQUEST["Apellido"]."'");
 				$row = mysql_fetch_array($result);
 				}
-				$variableCaptura[6] = $row['id_cliente'];
+				$variableCaptura[5] = $row['id_cliente'];
 				
 				echo "Usuario: ".$_REQUEST["Nombre"]." ".$_REQUEST["Apellido"]."<br>";
 				##alguna mesa de n personas tiene reserva para para el intervalo de la mesas
@@ -41,7 +40,10 @@
 				$Mesas_reservadas = $result['reserva'];
 				$procentaje = $Mesas_reservadas / $Mesas_total * 100;
 				if($procentaje < 25){
-					echo "No se puede ingresar";
+					echo "No se puede hacer la reserva se encuentra llega para hace hora<br>";
+					echo "Intente otra horarios";
+					require("reserva.php");
+			        return;
 					}
 				else{
 					echo "Se puede registrar existe bacantes";
