@@ -19,7 +19,7 @@
         onSelect   : function() { this.hide() },
         min       : now,
         showTime   : 12,
-        dateFormat : "%Y/%m/%d/%I:%M %p"
+        dateFormat : "%Y-%m-%d %H:%M"
       });
     //]]></script> 
   </p>
