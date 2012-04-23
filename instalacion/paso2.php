@@ -71,6 +71,6 @@ else{
   </p>
   <p>    <br>
    <input type="reset" name="button" id="button" value="Limpiar" />
-   <input type="submit" value="Siquiente" />
+   <input type="submit" value="Siguiente" />
   </p>
 </form>

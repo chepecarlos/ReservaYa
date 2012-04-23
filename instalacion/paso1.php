@@ -16,6 +16,6 @@ Registro de Datos de la Empresa
     <input type="text" name="Mesas" id="Mesas" /><br>
       <br>
    <input type="reset" name="button" id="button" value="Limpiar" />
-   <input type="submit" value="Siquiente" />
+   <input type="submit" value="Siguiente" />
   
 </form>
