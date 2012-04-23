@@ -8,21 +8,28 @@ if(isset ($_REQUEST['Dui'])){
 	$VariableCaptura[4]="Telefono";
 	$VariableCaptura[5]="F_Nacimiento";
 	$VariableCaptura[6]="Dui";
+	$VariableCaptura[7]="Usuario";
 	
 	for($i = 0;$i <count($VariableCaptura);$i++){
-		$_SESSION["Administrador[$VariableCaptura[$i]]"]=$_REQUEST["$VariableCaptura[$i]"];
-		echo $_SESSION["Administrador[$VariableCaptura[$i]]"];
-		echo "<br>";
+		if($_REQUEST["$VariableCaptura[$i]"] <> ""){	
+			$_SESSION["Administrador[$VariableCaptura[$i]]"]=$_REQUEST["$VariableCaptura[$i]"];
+			}
+		else{
+			echo "Error con el ".$VariableCaptura[$i]."<br>";
+			require("paso2.php");
+			return;
+			}
 		}	
 	}
 	else{
-	 echo "no se enviaron datos";
 	}
 ?>
 
 Registro de Cantidad de Mesas
 <form method="post" action="?Paso=777">
-Tlaba de las Mesas Agregadas
+Taba de las Mesas Agregadas <br>
+Ingrese en nombre de la mesa <br>
+y capacidad de las mismas(numero)<br>
   <table border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td>
@@ -47,9 +54,6 @@ Tlaba de las Mesas Agregadas
   </table>
   <p><br>
     <input type="reset" name="button" id="button" value="Limpiar" />
-    <?php
-      echo '<a href="'.$_SERVER['HTTP_REFERER'].'"><input type="button" name="button" id="button" value="Atras" /></a>';
-	?>
     <input type="submit" value="Siquiente" />
   </p>
 </form>

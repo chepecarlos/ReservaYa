@@ -11,13 +11,22 @@ if(isset ($_REQUEST['Website'])){
 	$VariableCaptura[6]="Mesas";
 	
 	for($i = 0;$i <count($VariableCaptura);$i++){
-		$_SESSION["Empresa[$VariableCaptura[$i]]"]=$_REQUEST["$VariableCaptura[$i]"];
-		echo $_SESSION["Empresa[$VariableCaptura[$i]]"];
-		echo "<br>";
+		if( $_REQUEST["$VariableCaptura[$i]"] <> ''){
+			$_SESSION["Empresa[$VariableCaptura[$i]]"]=$_REQUEST["$VariableCaptura[$i]"];
+				if($i ==  2 and !preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i",$VariableCaptura[2])){
+					echo "Falto ingresar ".$VariableCaptura[$i]."<br>";
+			        require("paso1.php");
+			        return;
+					}
+			}
+		else{
+			echo "Falto ingresar ".$VariableCaptura[$i]."<br>";
+			require("paso1.php");
+			return;
+			}
 		}	
 	}
 else{
-	echo "Reenvide el anterior formlario";
 	}
 ?>
 
@@ -42,16 +51,26 @@ else{
     <input type="text" name="Telefono" id="Telefono" />
   </p>
   <p>Fecha - Nacimiento :
-    <input type="text" name="F_Nacimiento" id="F_Nacimiento" />
-</p>
+    <input type="text" name="F_Nacimiento" id="F_Nacimiento" /><button id="f_Nacimiento">...</button><br />
+    <script type="text/javascript">//<![CDATA[
+    var now = new Date();
+      Calendar.setup({
+        inputField : "F_Nacimiento",
+        trigger    : "f_Nacimiento",
+        onSelect   : function() { this.hide() },
+        max       : now,
+        dateFormat : "%Y-%m-%d"
+      });
+    //]]></script> 
+  </p>
   <p>Dui :
     <input type="text" name="Dui" id="Dui" />
   </p>
+   <p>Usuario :
+    <input type="text" name="Usuario" id="Usuario" />
+  </p>
   <p>    <br>
    <input type="reset" name="button" id="button" value="Limpiar" />
-    <?php
-      echo '<a href="'.$_SERVER['HTTP_REFERER'].'"><input type="button" name="button" id="button" value="Atras" /></a>';
-	?>
-    <input type="submit" value="Siquiente" />
+   <input type="submit" value="Siquiente" />
   </p>
 </form>
