@@ -27,6 +27,7 @@ alter table cliente add unique index(nombre, apellido);
 
 create table empleado(
   id_empleado integer auto_increment not null,
+  usuario varchar(100) not null
   nombre varchar(50) not null,
   apellido varchar(50) not null,
   rol enum ('administrador', 'empleado') default 'empleado',
@@ -79,8 +80,6 @@ create table recepcion(
 -- Tabla config
 -- * Aqui estara las configuraciones del sistema,
 -- * Datos de la empresa, direccion, etc.alter table votes add unique index(user, email, address);
-
-
 
 create table config(
   nombre varchar(100) not null primary key,
