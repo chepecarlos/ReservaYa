@@ -28,7 +28,7 @@
 				}
 				echo "Usuario: ".$_REQUEST["Nombre"]." ".$_REQUEST["Apellido"]."<br>";
 				##alguna mesa de n personas tiene reserva para para el intervalo de la mesas
-				
+				$Mesas_total =""#consulta para obtener numero de mesas
 				##ingresa en reserva el ide, nombre_mesa, fecha_reserva 
 				
 			else{
