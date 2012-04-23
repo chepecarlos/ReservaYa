@@ -33,7 +33,7 @@
 				$result  = mysql_fetch_array($result);
 				echo "Total de mesas: ".$result['cantidad'];
 				##Consulta para saber canitdad de personas 
-				$Mesas_reservadas = "";
+				$Mesas_reservadas = "select count(*) as reserva from reserva where timestampdiff(minute,`dia_reserva`,'".$_REQUEST["Reserva"]."') <30 and timestampdiff(minute,`dia_reserva`,'".$_REQUEST["Reserva"]."') >-30 ";
 				
 				##ingresa en reserva el ide, nombre_mesa, fecha_reserva 
 				}
