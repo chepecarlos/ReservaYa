@@ -4,11 +4,11 @@
 	$VariableCaptura[2]=$_REQUEST["Email"];
 	$VariableCaptura[3]=$_REQUEST["Reserva"];
 	$VariableCaptura[4]=$_REQUEST["Captcha"];
+	$VariableCaptura[5]=$_REQUEST["Mesa"];
 
 	if( $VariableCaptura[4] == '2'){
 		if($VariableCaptura[0] <> '' and $VariableCaptura[1] <> ''){
 			if( preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i",$VariableCaptura[2]) or  $VariableCaptura[2] == ""){
-				echo "ingresar en la base de datos";
 				## consulta de si exite el usuario
 				$result = mysql_query("SELECT id_cliente FROM cliente where nombre='".$_REQUEST["Nombre"]."' and apellido='".$_REQUEST["Apellido"]."'");
 				$row = mysql_fetch_array($result);
@@ -26,6 +26,11 @@
 				}
 				echo $row['id_cliente'];
 				}
+				echo "Usuario: ".$_REQUEST["Nombre"]." ".$_REQUEST["Apellido"]."<br>";
+				##alguna mesa de n personas tiene reserva para para el intervalo de la mesas
+				
+				##ingresa en reserva el ide, nombre_mesa, fecha_reserva 
+				
 			else{
 				echo "Error con el correco electonico";
 				}
