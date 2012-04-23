@@ -31,7 +31,10 @@
 				$Mesas_total ="SELECT COUNT(*) as cantidad FROM mesa";#consulta para obtener numero de mesas
 				$result =  mysql_query($Mesas_total) or die("Problemas en el select de mesas:".mysql_error());
 				$result  = mysql_fetch_array($result);
-				echo "cantodad de mesas ".$result['cantidad'];
+				echo "Total de mesas: ".$result['cantidad'];
+				##Consulta para saber canitdad de personas 
+				$Mesas_reservadas = "";
+				
 				##ingresa en reserva el ide, nombre_mesa, fecha_reserva 
 				}
 			else{
