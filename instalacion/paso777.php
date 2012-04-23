@@ -33,7 +33,7 @@ $consulta_[3] = "insert into config values('Empresa_website','".$_SESSION["Empre
 $consulta_[4] = "insert into config values('Empresa_Telefono','".$_SESSION["Empresa[Telefono]"]."')";
 $consulta_[5] = "insert into config values('Empresa_slogan','".$_SESSION["Empresa[slogan]"]."')";
 $consulta_[6] = "insert into config values('Empresa_Mesas','".$_SESSION["Empresa[Mesas]"]."')";
-$consulta_[7] = "insert into empleado (nombre, apellido, password, email,telefono,fecha_nacimiento,dui,usuario) values ('".$_SESSION["Administrador[Nombre]"]."','".$_SESSION["Administrador[Apellido]"]."','".$_SESSION["Administrador[Password]"]."','".$_SESSION["Administrador[Email]"]."','".$_SESSION["Administrador[Telefono]"]."','".$_SESSION["Administrador[F_Nacimiento]"]."','".$_SESSION["Administrador[Dui]"]."','".$_SESSION["Administrador[Usuario]"]."')";
+$consulta_[7] = "insert into empleado (nombre, apellido, rol, password, email,telefono,fecha_nacimiento,dui,usuario) values ('".$_SESSION["Administrador[Nombre]"]."','".$_SESSION["Administrador[Apellido]"]."','administrador','".$_SESSION["Administrador[Password]"]."','".$_SESSION["Administrador[Email]"]."','".$_SESSION["Administrador[Telefono]"]."','".$_SESSION["Administrador[F_Nacimiento]"]."','".$_SESSION["Administrador[Dui]"]."','".$_SESSION["Administrador[Usuario]"]."')";
 $consulta_[9] = "insert into config values('Duracion de Reserva','30')";
 
 for($i = 1; $i <= 7 ; $i += 1){
