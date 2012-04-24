@@ -31,20 +31,29 @@ if(isset ($_REQUEST['login'])){
 	else{
 		echo "Usuario no valido";
 		}	
-	echo $Consulta;
 	}##fin ingresar al sistema
-else if(isset($_GET['Estado'])){
-	if ( $_GET['Estado'] 	= "Salir"){
-	session_unset();
-	session_destroy();
+	
+if(isset ($_SESSION["ID"])){
+	echo "Cuerpo del sistema<br>";
+	
+	if(isset($_GET['Estado'])){
+		switch ($_GET['Estado']){
+			case 1:
+			echo "HOLA";
+			session_unset();
+			session_destroy();
+			require("login.php");
+			return;
+			break;
 		}
 	}
-if(isset ($_SESSION["ID"])){
-	echo "Cuerpo del sistema<br>";?>
+	?>
 
-<a href="?Estado=Salir">Salir</a> 
-<a href="?Estado=Perfil">Perfil</a>	
+<a href="?Estado=1">Salir</a> <br>
+<a href="?Estado=2">Perfil</a>	
 <?php
+	
+	
 	}
 else{
 	require("login.php");
