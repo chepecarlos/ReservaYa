@@ -25,30 +25,26 @@ if(isset ($_REQUEST['login'])){
 	$result  = mysql_fetch_array($result);
 	if($result['id_empleado'] <> '' and $result['rol'] <> ''){
 		echo "Usuaio valido";
+		$_SESSION['ID'] = $result['id_empleado'];
+		$_SESSION['ROL'] = $result['rol'];
 		}
 	else{
 		echo "Usuario no valido";
 		}	
-
 	echo $Consulta;
-	}
-	
-if(isset ($_REQUEST['Paso'])){
-	switch ($_REQUEST['Paso'])
-    {
-	case 1:
-		require("paso1.php");
-    break;
-	case 2:
-		require("paso2.php");
-	break;
-	case 3:
-		require("paso3.php");
-	break;
-	case 777:
-		require("paso777.php");
-	break;
+	}##fin ingresar al sistema
+else if(isset($_GET['Estado'])){
+	if ( $_GET['Estado'] 	= "Salir"){
+	session_unset();
+	session_destroy();
 		}
+	}
+if(isset ($_SESSION["ID"])){
+	echo "Cuerpo del sistema<br>";?>
+
+<a href="?Estado=Salir">Salir</a> 
+<a href="?Estado=Perfil">Perfil</a>	
+<?php
 	}
 else{
 	require("login.php");
