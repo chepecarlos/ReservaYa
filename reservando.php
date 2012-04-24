@@ -50,6 +50,8 @@
 					}
 				else{
 					echo "Se puede registrar existe bacantes";
+					$superconsulta = "select nombre_mesa from mesa where nombre_mesa != all (select nombre_mesa from reserva where timestampdiff(minute,`dia_reserva`,'2012-04-24 08:00:00') <30 and timestampdiff(minute,`dia_reserva`,'2012-04-24 08:00:00') >-30 ) 
+and (capacidad = 4)";
 					}	
 				echo "<br>";	
 				##ingresa en reserva el ide, nombre_mesa, fecha_reserva 
