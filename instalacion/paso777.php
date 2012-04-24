@@ -47,6 +47,8 @@ $consulta = "insert into mesa (nombre_mesa,capacidad) values ('".$_SESSION["Nomb
 #echo "<br>";
 ejecutar_Sentencia($consulta, $conexion);	
 }
+session_unset();
+session_destroy();
 ?>
 Felicidades ya tiene instalado el sistema <br>
 Ya puede borrar el directorio instalacion <br>
