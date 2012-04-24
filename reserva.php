@@ -1,13 +1,13 @@
 <p>Reservas Online</p>
 <form name="form1" method="post" action="">
   <p>Nombre : 
-    <input type="text" name="Nombre" id="Nombre">
+    <input type="text" name="Nombre" id="Nombre" value="<?php if(isset( $_REQUEST['Nombre'])) echo $_REQUEST['Nombre']; else echo ""; ?>" >
   </p>
   <p>Apellido : 
-    <input type="text" name="Apellido" id="Apellido">
+    <input type="text" name="Apellido" id="Apellido" value="<?php if(isset( $_REQUEST['Apellido'])) echo $_REQUEST['Apellido']; else echo ""; ?>">
   </p>
   <p>Email (opcional) :
-    <input type="text" name="Email" id="Email">
+    <input type="text" name="Email" id="Email" value="<?php if(isset( $_REQUEST['Email'])) echo $_REQUEST['Email']; else echo ""; ?>" >
   </p>
   <p>Fecha de Reserva : 
   <input type="Text" name="Reserva" id="Reserva" readonly /><button id="f_Reserva"><img src="imagenes/cal.gif" alt="Calendario" /></button>
