@@ -10,7 +10,7 @@
     <input type="text" name="Email" id="Email">
   </p>
   <p>Fecha de Reserva : 
-  <input type="Text" name="Reserva" id="Reserva" DISABLED /><button id="f_Reserva"><img src="imagenes/cal.gif" alt="Calendario" /></button>
+  <input type="Text" name="Reserva" id="Reserva" readonly /><button id="f_Reserva"><img src="imagenes/cal.gif" alt="Calendario" /></button>
     <script type="text/javascript">//<![CDATA[
     var now = new Date();
       Calendar.setup({
