@@ -47,7 +47,9 @@
 			        return;
 					}
 				else{
-					echo "Se puede registrar existe bacantes";
+					echo "Se puede registrar existe bacantes<br>";
+					echo "Lo esperamos a ".$VariableCaptura[3];
+					
 					$TiempoReserva ="select dato from config where nombre='Duracion Reserva'";
 					$superconsulta = "select nombre_mesa from mesa where nombre_mesa != all (select nombre_mesa from reserva where timestampdiff(minute,`dia_reserva`,'".$VariableCaptura[3]."') <30 and timestampdiff(minute,`dia_reserva`,'".$VariableCaptura[3]."') >-30 ) 
 and (capacidad = ".$VariableCaptura[4].")";
@@ -57,7 +59,6 @@ and (capacidad = ".$VariableCaptura[4].")";
 					echo $Mesa_Nombre;
 					$Consulta_Insercion ="";
 					$result =  "insert into reserva (id_cliente,nombre_mesa,dia_reserva) values ('".$variableCaptura[5]."','".$Mesa_Nombre."','".$VariableCaptura[3]."')";
-					
 					}	
 				echo "<br>";	
 				##ingresa en reserva el ide, nombre_mesa, fecha_reserva 
