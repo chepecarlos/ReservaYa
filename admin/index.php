@@ -50,7 +50,7 @@ if(isset ($_REQUEST['login'])){
 	<a href="?Estado=3">Reservas</a> <br>
 	<a href="?Estado=4">Administracion de usuarios</a>
 </td>
-<td>
+<td WIDTH=92%>
 <?php
 if(isset ($_SESSION["ID"])){
 	if(isset($_GET['Estado'])){
@@ -78,17 +78,16 @@ if(isset ($_SESSION["ID"])){
 </table>
 	
 <?php
-	
-	
 	}
 else{
 	require("login.php");
 	}
 ?></center>
 </div>
-<?php
-require("../pie.php");
-?>
 </div>
+<center><?php
+require("../pie.php");
+?></center>
+
 </body> 
 </html>
