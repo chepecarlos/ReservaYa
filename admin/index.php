@@ -6,9 +6,14 @@ session_start();
 <html>
 <head>
 <title>
-Proyecto ADSII
+Administracion de Reservas
 </title>
-<link rel="StyleSheet" href="../estilo.css" type="text/css">
+	<link rel="StyleSheet" href="../estilo.css" type="text/css">
+	<script src="../src/js/jscal2.js"></script>
+    <script src="../src/js/lang/es.js"></script>
+    <link rel="stylesheet" type="text/css" href="../src/css/jscal2.css" />
+    <link rel="stylesheet" type="text/css" href="../src/css/border-radius.css" />
+    <link rel="stylesheet" type="text/css" href="../src/css/steel/steel.css" />
 </head>
 
 <body> 
@@ -25,30 +30,35 @@ if(isset ($_REQUEST['login'])){
 	$result  = mysql_fetch_array($result);
 	if($result['id_empleado'] <> '' and $result['rol'] <> ''){
 		echo "Usuaio valido";
+		$_SESSION['ID'] = $result['id_empleado'];
+		$_SESSION['ROL'] = $result['rol'];
 		}
 	else{
 		echo "Usuario no valido";
 		}	
-
-	echo $Consulta;
-	}
+	}##fin ingresar al sistema
 	
-if(isset ($_REQUEST['Paso'])){
-	switch ($_REQUEST['Paso'])
-    {
-	case 1:
-		require("paso1.php");
-    break;
-	case 2:
-		require("paso2.php");
-	break;
-	case 3:
-		require("paso3.php");
-	break;
-	case 777:
-		require("paso777.php");
-	break;
+if(isset ($_SESSION["ID"])){
+	if(isset($_GET['Estado'])){
+		switch ($_GET['Estado']){
+			case 1:
+				session_unset();
+				session_destroy();
+				require("login.php");
+			return;
+			break;
+			case 2:
+				require("perfil.php");
+			break;
 		}
+	}
+	?>
+
+<a href="?Estado=1">Salir</a> <br>
+<a href="?Estado=2">Perfil</a>	
+<?php
+	
+	
 	}
 else{
 	require("login.php");

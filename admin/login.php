@@ -1,4 +1,4 @@
-<form method="post" action="">
+<form method="post" action=".">
   <table width="24%" border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td width="33%">Login</td>
