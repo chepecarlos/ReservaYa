@@ -17,7 +17,7 @@
  <?php
  if(isset ($_REQUEST['Reserva'])){
 	echo $_REQUEST['Reserva'];
-	$ConsultaFinal="";
+	$ConsultaFinal="SELECT * FROM reserva inner join cliente on reserva.id_cliente where reserva.id_cliente=cliente.id_cliente ORDER BY ".$_GET[Reserva]" ASC";
 	
  } 
  ?>
