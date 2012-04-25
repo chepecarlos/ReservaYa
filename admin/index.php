@@ -6,9 +6,14 @@ session_start();
 <html>
 <head>
 <title>
-Proyecto ADSII
+Administracion de Reservas
 </title>
-<link rel="StyleSheet" href="../estilo.css" type="text/css">
+	<link rel="StyleSheet" href="../estilo.css" type="text/css">
+	<script src="../src/js/jscal2.js"></script>
+    <script src="../src/js/lang/es.js"></script>
+    <link rel="stylesheet" type="text/css" href="../src/css/jscal2.css" />
+    <link rel="stylesheet" type="text/css" href="../src/css/border-radius.css" />
+    <link rel="stylesheet" type="text/css" href="../src/css/steel/steel.css" />
 </head>
 
 <body> 
@@ -34,16 +39,16 @@ if(isset ($_REQUEST['login'])){
 	}##fin ingresar al sistema
 	
 if(isset ($_SESSION["ID"])){
-	echo "Cuerpo del sistema<br>";
-	
 	if(isset($_GET['Estado'])){
 		switch ($_GET['Estado']){
 			case 1:
-			echo "HOLA";
-			session_unset();
-			session_destroy();
-			require("login.php");
+				session_unset();
+				session_destroy();
+				require("login.php");
 			return;
+			break;
+			case 2:
+				require("perfil.php");
 			break;
 		}
 	}
