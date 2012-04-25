@@ -65,6 +65,13 @@ if(isset ($_SESSION["ID"])){
 <a href="?Estado=3">Reservas</a> <br>
 <a href="?Estado=4">Administracion de usuarios</a>
 	
+	<table WIDTH=100% border="0">
+<tr>
+<td WIDTH=8%>hola</td>
+<td>1</td>
+</tr>
+</table>
+	
 <?php
 	
 	
