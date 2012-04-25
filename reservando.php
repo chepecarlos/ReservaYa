@@ -62,6 +62,8 @@ and (capacidad = ".$VariableCaptura[4].")";
 						}
 					else{
 						echo "Escoja otro horario";
+						require("reserva.php"); 
+						return;
 						}
 					}	
 				echo "<br>";	
@@ -69,17 +71,21 @@ and (capacidad = ".$VariableCaptura[4].")";
 				}
 			else{
 				echo "Error con el correco electonico";
+				require("reserva.php"); 
+				return;
 				}
 				
 			}
 		else{
 			echo "No se ingreso en nombre y/o Apellido";
 			require("reserva.php"); 
+			return;
 			}
 		}
 	else{
 		$_SESSION["captcha"] = md5(rand()*time());
 		echo "<br>¿Erres real mente un humano?</br> <br> Error el Captcha </br>";
 		require("reserva.php"); 
+		return;
 		}	
 ?>
