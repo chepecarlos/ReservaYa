@@ -6,3 +6,44 @@ en un analisis de este problema y darle la,
 solucion necesaria, en este caso el problema,
 se basa en la reserva online y disponibilidad,
 de mesas para dicho restaurante.
+
+Entras http://chepecarlos.github.com/ReservaYa, puede descargarlo en el formato que mas desee o, alternativamente, clonarlo por medio del paquete git con el comando git clone.
+
+Descomprimes el archivo y lo subes a tu hosting en donde lo necesites.
+
+Creas en tu base de datos con la informacion de sistema de reserva
+
+Luego vas al archivo configuracion-ejemplo.php, dentro de la carpeta donde subimos el sistema, lo abres y veras las siguientes  lineas:
+ 
+/* Nombre de la base de datos en MYSQL*/
+define('DB_NAME', 'database_name_here');
+
+/** Usuario de MYSQL */
+define('DB_USER', 'username_here');
+
+/** Contraseña MySQL */
+define('DB_PASSWORD', 'password_here');
+
+/** Servidor MySQL  */
+define('DB_HOST', 'localhost');
+
+/** Tipo de carractes de la base de datos Database */
+define('DB_CHARSET', 'utf8');
+ 
+cambias database_name_here, username_here y password_here con la informacion de tu base de datos, el nombre del usuario y la contraseña. Luego renombras el archivo como configuracion.php
+
+dentro del navegador web, ejecutas el instalador de la siguiente manera: escribe la barra de direcciones donde subimos el sistema ReservaYa y al final de la direccion añadirle /instalacion.
+
+Cuando ejecute la pagina se mostrará una formulario en la que debera de ingresar los datos de la empresas y al finalizar sus datos, dar click en siguiente.
+
+Para iniciar con la instalación, se debe ingresar los datos de la empresa, nombre, Dirección de local, correo electrónico, una pagina web de la empresa, teléfono, su eslogan y el numero total de mesas que posee la empresa y dar click en siguiente al terminar.
+
+Luego el administrador del sistema ingresará sus datos.  los cuales serán nombre, apellido, una contraseña, un e-mail, un telefeno dia de nacimiento, su DUI y un nombre de usuario para ingresar al sistema. 
+
+Despues de ingresada  la información del administrador del sistema, se mostraran campos en donde ingresará el nombre de las mesas y la capacidad máxima de personas para dicha mesa.
+
+Al final, se mostrará los datos ingresados.
+
+Luego de terminar la instalacion, se debe borrar toda la carpeta instalación y su contenido. 
+
+Y listo!! ya tiene instalado su sistema de reserva de mesas. 
