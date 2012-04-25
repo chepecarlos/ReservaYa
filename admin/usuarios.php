@@ -1,14 +1,4 @@
-<html>
-<head>
-<title>Usuarios...</title>
-<link rel="StyleSheet" href="../estilo.css" type="text/css">
-</head>
-
-<body>
-	<?php 
-require("../cabecera.php");
-?>
-<div class="reserva">
+<center>
 <p>Administracion de Perfiles</p><center>
 <form id="form1" name="form1" method="post" action="">
   <table width="60%" border="0" cellspacing="0" cellpadding="0">
@@ -24,9 +14,4 @@ require("../cabecera.php");
   </table>
 </form>
 </center>
-<?php
-require("../pie.php");
-?>
-</div>
-</body>
-</html>
+

@@ -54,7 +54,7 @@ if(isset ($_SESSION["ID"])){
 				require("reservas.php");
 			break;	
 			case 4:
-				require("
+				require("usuarios.php");
 			break;
 		}
 	}
