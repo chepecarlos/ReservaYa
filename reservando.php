@@ -56,7 +56,7 @@ and (capacidad = ".$VariableCaptura[4].")";
 					$Mesa_Nombre = $result['nombre_mesa'];
 					echo $Mesa_Nombre;
 					$Consulta_Insercion ="";
-					$result =  mysql_query($Consulta_Insercion) or die("Problemas en el select de mesas:".mysql_error());
+					$result =  "insert into reserva (id_cliente,nombre_mesa,dia_reserva) values ('".$variableCaptura[5]."','".$Mesa_Nombre."','".$VariableCaptura[3]."')";
 					
 					}	
 				echo "<br>";	
