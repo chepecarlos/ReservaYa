@@ -1,5 +1,6 @@
 body {
-  background-repeat:no-repeat;
+background-repeat:repeat-y;
+background-clip:content-box;
   background-size: 100%;
   background-image: url('imagenes/background.jpg');
 }
@@ -27,3 +28,30 @@ body {
 color: white;
 }
 
+.izquierda ul {
+       font:bold 11px Verdana, Arial, Helvetica, sans-serif;
+       color:#586885;
+       line-height: 140%;
+       text-transform:capitalize;
+}
+
+.izquierda{
+       width:100px;
+       height:auto;
+       background-color:#EFEFEF;
+       border-style:solid;
+       border-width:1px;
+       border-color:#000000;
+       margin:0 0 0 5px;
+       float:left;
+       padding:3px;
+}
+
+#container {
+       background-color:#DDE6AC;
+       border-style:solid;
+       border-color:#000000;
+       margin: 0 auto;
+       width:700px;
+       height:auto;
+}
