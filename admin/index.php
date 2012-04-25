@@ -67,7 +67,7 @@ if(isset ($_SESSION["ID"])){
 	
 	<table WIDTH=100% border="0">
 <tr>
-<td WIDTH=8%>hola</td>
+<td WIDTH=8% BGCOLOR="#C0C0C0">hola</td>
 <td>1</td>
 </tr>
 </table>
