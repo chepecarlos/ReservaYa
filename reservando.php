@@ -53,8 +53,11 @@
 and (capacidad = ".$VariableCaptura[4].")";
 					$result =  mysql_query($superconsulta) or die("Problemas en el select de mesas:".mysql_error());
 					$result  = mysql_fetch_array($result);
-					$Mesa_Nombre = $result['AQUI'];
+					$Mesa_Nombre = $result['nombre_mesa'];
 					echo $Mesa_Nombre;
+					$Consulta_Insercion ="";
+					$result =  mysql_query($Consulta_Insercion) or die("Problemas en el select de mesas:".mysql_error());
+					
 					}	
 				echo "<br>";	
 				##ingresa en reserva el ide, nombre_mesa, fecha_reserva 
