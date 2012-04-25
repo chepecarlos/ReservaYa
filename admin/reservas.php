@@ -28,22 +28,25 @@
 </tr>
  <?php
  if(isset ($_REQUEST['Reserva'])){
-	echo $_REQUEST['Reserva'];
-	$ConsultaFinal="SELECT * FROM reserva inner join cliente on reserva.id_cliente where reserva.id_cliente=cliente.id_cliente ORDER BY ".$_GET[Reserva]" ASC";
-	$result = mysql_query($ConsultaFina);
+	$ConsultaFinal="SELECT * FROM reserva inner join cliente on reserva.id_cliente where reserva.id_cliente=cliente.id_cliente ORDER BY '".$_REQUEST['Reserva']."' ASC";
+	$result = mysql_query($ConsultaFinal) or die("Problemas en tiempo de reserva:".mysql_error());
+?>
+<td>
+<?php
 
 while($row = mysql_fetch_array($result))
   {
   echo "<tr>";	  
-  echo "<tb>".$row['FirstName']."</tb>";
-  echo "</tr>;
+  echo "<tb>".$row['id_cliente']."</tb>";
+
+  echo "</tr>";
   
   }
  } 
  ?>
 
-<tr>
-<td></td>
+
+</td>
 <td></td>
 <td></td>
 <td></td>
