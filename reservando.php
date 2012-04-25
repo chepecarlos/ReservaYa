@@ -35,6 +35,10 @@
 				$result =  mysql_query($Mesas_reservadas) or die("Problemas en el select de mesas:".mysql_error());
 				$result  = mysql_fetch_array($result);
 				$Mesas_reservadas = $result['reserva'];
+				$Tiempo_Reserva = "";
+				$result =  mysql_query($Tiempo_Reserva) or die("Problemas en el select de mesas:".mysql_error());
+				$result  = mysql_fetch_array($result);
+				$Tiempo_Reserva = $result['AQUI'];
 				$procentaje = $Mesas_reservadas / $Mesas_total * 100;
 				if($procentaje > 25){
 					echo "No se puede hacer la reserva se encuentra llega para hace hora<br>";
@@ -47,7 +51,10 @@
 					$TiempoReserva ="select dato from config where nombre='Duracion Reserva'";
 					$superconsulta = "select nombre_mesa from mesa where nombre_mesa != all (select nombre_mesa from reserva where timestampdiff(minute,`dia_reserva`,'".$VariableCaptura[3]."') <30 and timestampdiff(minute,`dia_reserva`,'".$VariableCaptura[3]."') >-30 ) 
 and (capacidad = ".$VariableCaptura[4].")";
-					echo $superconsulta;
+					$result =  mysql_query($superconsulta) or die("Problemas en el select de mesas:".mysql_error());
+					$result  = mysql_fetch_array($result);
+					$Mesa_Nombre = $result['AQUI'];
+					echo $Mesa_Nombre;
 					}	
 				echo "<br>";	
 				##ingresa en reserva el ide, nombre_mesa, fecha_reserva 
