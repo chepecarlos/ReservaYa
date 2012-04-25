@@ -14,14 +14,8 @@
   
  <input type="submit" name="button" id="button" value="Enviar">
  </p>
- <?php
- if(isset ($_REQUEST['Reserva'])){
-	echo $_REQUEST['Reserva'];
-	$ConsultaFinal="";
-	
- } 
- ?>
-<table>
+ 
+ <table>
 <tr>
 <td>Nombre</td>
 <td>Apellido</td>
@@ -33,6 +27,22 @@
 <td></td>
 <td></td>
 </tr>
+ <?php
+ if(isset ($_REQUEST['Reserva'])){
+	echo $_REQUEST['Reserva'];
+	$ConsultaFinal="";
+	$result = mysql_query($ConsultaFina);
+
+while($row = mysql_fetch_array($result))
+  {
+  echo "<tr>";	  
+  echo "<tb>".$row['FirstName']."</tb>";
+  echo "</tr>;
+  
+  }
+ } 
+ ?>
+
 <tr>
 <td></td>
 <td></td>
