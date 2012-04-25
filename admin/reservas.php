@@ -14,7 +14,6 @@
   
  <input type="submit" name="button" id="button" value="Enviar">
  </p>
- 
  <table>
 <tr>
 <td>Nombre</td>
@@ -30,7 +29,7 @@
  <?php
  if(isset ($_REQUEST['Reserva'])){
 	echo $_REQUEST['Reserva'];
-	$ConsultaFinal="";
+	$ConsultaFinal="SELECT * FROM reserva inner join cliente on reserva.id_cliente where reserva.id_cliente=cliente.id_cliente ORDER BY ".$_GET[Reserva]" ASC";
 	$result = mysql_query($ConsultaFina);
 
 while($row = mysql_fetch_array($result))
