@@ -38,9 +38,12 @@ if(isset ($_REQUEST['login'])){
 		}	
 	}##fin ingresar al sistema
 if(isset($_GET['Estado'])){
-	if($_GET['Estado'] = 1 ){
+	switch ($_GET['Estado']){
+		case 1:
 		session_unset();
 		session_destroy();
+		require("login.php");
+		break;
 	}
 }	
 ?>
@@ -48,7 +51,7 @@ if(isset($_GET['Estado'])){
 <?php
 if(isset ($_SESSION["ID"])){
 ?>
-	<table WIDTH=100% border="0">
+<table WIDTH=100% border="0">
 <tr>
 <td WIDTH=8% BGCOLOR="#C0C0C0">
 	<a href="?Estado=1">Salir</a> <br>
