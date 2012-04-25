@@ -17,6 +17,8 @@
  <?php
  if(isset ($_REQUEST['Reserva'])){
 	echo $_REQUEST['Reserva'];
+	$ConsultaFinal="";
+	
  } 
  ?>
 <table>
