@@ -50,12 +50,21 @@ if(isset ($_SESSION["ID"])){
 			case 2:
 				require("perfil.php");
 			break;
+			case 3:
+				require("reservas.php");
+			break;	
+			case 4:
+				require("
+			break;
 		}
 	}
 	?>
 
 <a href="?Estado=1">Salir</a> <br>
-<a href="?Estado=2">Perfil</a>	
+<a href="?Estado=2">Perfil</a> <br>
+<a href="?Estado=3">Reservas</a> <br>
+<a href="?Estado=4">Administracion de usuarios</a>
+	
 <?php
 	
 	
