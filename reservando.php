@@ -16,8 +16,6 @@
 				
 				if ($row['id_cliente'] == ''){
 				$consulta_[0] = "insert into cliente (nombre, apellido, email) values('".$_REQUEST["Nombre"]."','".$_REQUEST["Apellido"]."','".$_REQUEST["Email"]."')";
-				echo "<br>";
-				echo $consulta_[0]."<br>";
 				#Si no existe que lo agrege
 				$row =  mysql_query($consulta_[0]) or die("Problemas en el ingresar de usuario: ".mysql_error());
 				## busca el ide de nuevo
@@ -31,17 +29,13 @@
 				$Mesas_total ="SELECT COUNT(*) as cantidad FROM mesa";#consulta para obtener numero de mesas
 				$result =  mysql_query($Mesas_total) or die("Problemas en el select de mesas:".mysql_error());
 				$result  = mysql_fetch_array($result);
-				echo "Total de mesas: ".$result['cantidad']."<br>";
 				$Mesas_total = $result['cantidad'];
 				##Consulta para saber canitdad de personas 
 				$Mesas_reservadas = "select count(*) as reserva from reserva where timestampdiff(minute,`dia_reserva`,'".$_REQUEST["Reserva"]."') <30 and timestampdiff(minute,`dia_reserva`,'".$_REQUEST["Reserva"]."') >-30 ";
-				echo $Mesas_reservadas."<br>";
 				$result =  mysql_query($Mesas_reservadas) or die("Problemas en el select de mesas:".mysql_error());
 				$result  = mysql_fetch_array($result);
-				echo "Mesas reservadas: ".$result['reserva']."<br>";
 				$Mesas_reservadas = $result['reserva'];
 				$procentaje = $Mesas_reservadas / $Mesas_total * 100;
-				echo $procentaje."<br>";
 				if($procentaje > 25){
 					echo "No se puede hacer la reserva se encuentra llega para hace hora<br>";
 					echo "Intente otra horarios";
