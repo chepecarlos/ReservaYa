@@ -37,11 +37,17 @@ if(isset ($_REQUEST['login'])){
 		echo "Usuario no valido";
 		}	
 	}##fin ingresar al sistema
-	
+if(isset($_GET['Estado'])){
+	if($_GET['Estado'] = 1 ){
+		session_unset();
+		session_destroy();
+	}
+}	
 ?>
 
-
-	
+<?php
+if(isset ($_SESSION["ID"])){
+?>
 	<table WIDTH=100% border="0">
 <tr>
 <td WIDTH=8% BGCOLOR="#C0C0C0">
@@ -52,12 +58,10 @@ if(isset ($_REQUEST['login'])){
 </td>
 <td>
 <?php
-if(isset ($_SESSION["ID"])){
+
 	if(isset($_GET['Estado'])){
 		switch ($_GET['Estado']){
 			case 1:
-				session_unset();
-				session_destroy();
 				require("login.php");
 			return;
 			break;
