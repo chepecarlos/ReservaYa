@@ -15,7 +15,7 @@
   $result  = mysql_fetch_array($result);				
 ?>
 
-<div class="reserva">
+<div width="100%" class="reserva">
 <p> Perfil</p><center>
 <form id="form1" name="form1" method="post" action="">
   <table width="100px" border="0" cellspacing="0" cellpadding="0">

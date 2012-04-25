@@ -1,8 +1,24 @@
-echo "Que linda son las resevas no :) ";
-
-nombre='',apellido='',password='',email='',telefono='',fecha_nacimiento=,
-dui=
-
+ <form name="form1" method="post" action="">
+  <p>Fecha de Reserva : 
+  <input type="Text" name="Reserva" id="Reserva" readonly /><button id="f_Reserva"><img src="imagenes/cal.gif" alt="Calendario" /></button>
+    <script type="text/javascript">//<![CDATA[
+    var now = new Date();
+      Calendar.setup({
+        inputField : "Reserva",
+        trigger    : "f_Reserva",
+        onSelect   : function() { this.hide() },
+        min       : now,
+        dateFormat : "%Y-%m-%d"
+      });
+    //]]></script> 
+  
+ <input type="submit" name="button" id="button" value="Enviar">
+ </p>
+ <?php
+ if(isset ($_REQUEST['Reserva'])){
+	echo $_REQUEST['Reserva'];
+ } 
+ ?>
 <table>
 <tr>
 <td>Nombre</td>
