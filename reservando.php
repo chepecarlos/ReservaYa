@@ -35,10 +35,10 @@
 				$result =  mysql_query($Mesas_reservadas) or die("Problemas en el select de mesas:".mysql_error());
 				$result  = mysql_fetch_array($result);
 				$Mesas_reservadas = $result['reserva'];
-				$Tiempo_Reserva = "";
+				$Tiempo_Reserva = "SELECT dato FROM config where nombre='Duracion de Reserva'";
 				$result =  mysql_query($Tiempo_Reserva) or die("Problemas en el select de mesas:".mysql_error());
 				$result  = mysql_fetch_array($result);
-				$Tiempo_Reserva = $result['AQUI'];
+				$Tiempo_Reserva = $result['dato'];
 				$procentaje = $Mesas_reservadas / $Mesas_total * 100;
 				if($procentaje > 25){
 					echo "No se puede hacer la reserva se encuentra llega para hace hora<br>";
