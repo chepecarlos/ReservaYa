@@ -13,10 +13,10 @@ if(isset ($_REQUEST['Dui'])){
 	for($i = 0;$i <count($VariableCaptura);$i++){
 		if($_REQUEST["$VariableCaptura[$i]"] <> ""){	
 			$_SESSION["Administrador[$VariableCaptura[$i]]"]=$_REQUEST["$VariableCaptura[$i]"];
-			if($i = 2 and $_REQUEST["Password"] <> $_REQUEST["Re-Password"]){
+			if($i == 2 and $_REQUEST["Password"] <> $_REQUEST["Re-Password"]){
 				echo "Error con la contraseñas no coinciden<br>";
 				require("paso2.php");
-				return
+				return;
 				}
 			}
 		else{
